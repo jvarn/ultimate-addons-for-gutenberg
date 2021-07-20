@@ -8,6 +8,7 @@
  * All blocks should be included here since this is the file that
  * Webpack is compiling as the input file.
  */
+
 __webpack_public_path__ = uagb_blocks_info.uagb_url + 'dist/';
 
 wp.UAGBSvgIcons = Object.keys( uagb_blocks_info.uagb_svg_icons );
@@ -61,6 +62,7 @@ import './blocks/extensions/block.js';
 import './blocks/tabs/block.js';
 import './blocks/tabs-child/block.js';
 import './blocks/lottie/block.js';
+import "./blocks/star-rating/block.js"
 
 import UAGB_Block_Icons from '@Controls/block-icons';
 
