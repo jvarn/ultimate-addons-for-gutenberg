@@ -49,6 +49,27 @@
 			$( document ).on( 'scroll', UAGBTableOfContents._showHideScroll );
 		},
 
+		hyperLinks() {
+			var hash = window.location.hash.substring(0);
+			if ( '' === hash || (/[^a-z0-9_-]$/).test( hash ) ) { 
+				return;
+			}
+			var hashId = encodeURI( hash.substring( 0 ) );
+			var selectedAnchor = document.querySelector( hashId );
+			if ( null === selectedAnchor ){
+				return;
+			}
+			var node = $( document ).find( '.wp-block-uagb-table-of-contents' );
+			scroll_offset = node.data( 'offset' );
+			var offset = $( decodeURIComponent( hash ) ).offset();
+			scroll_delay = node.data( 'delay' );
+			if ( "undefined" != typeof offset ) {
+				$( "html, body" ).animate( {
+					scrollTop: ( offset.top - scroll_offset )
+				}, scroll_delay )
+			}
+		},
+
 		_toggleCollapse( e ) {
 			if ( $( this ).find( '.uag-toc__collapsible-wrap' ).length > 0 ) {
 				const $root = $( this ).closest(
@@ -212,5 +233,10 @@
 
 	$( document ).ready( function () {
 		UAGBTableOfContents.init();
-	} );
-} )( jQuery );
+	})
+
+	$( window ).load(function() {
+		UAGBTableOfContents.hyperLinks();
+	})
+
+} )( jQuery )

@@ -8,27 +8,30 @@ module.exports = function ( grunt ) {
 					mode: true,
 				},
 				src: [
-					'**',
-					'!node_modules/**',
-					'!.git/**',
-					'!*.sh',
-					'!*.zip',
-					'!eslintrc.json',
-					'!README.md',
-					'!Gruntfile.js',
-					'!package.json',
-					'!package-lock.json',
-					'!.gitignore',
-					'!.gitattributes',
-					'!*.zip',
-					'!Optimization.txt',
-					'!composer.json',
-					'!composer.lock',
-					'!phpcs.xml.dist',
-					'!vendor/**',
-					'!src/**',
-					'!scripts/**',
-					'!config/**',
+					"**",
+					"!node_modules/**",
+					"!.git/**",
+					"!*.sh",
+					"!*.zip",
+					"!eslintrc.json",
+					"!README.md",
+					"!Gruntfile.js",
+					"!package.json",
+					"!package-lock.json",
+					"!.gitignore",
+					"!.gitattributes",
+					"!*.zip",
+					"!Optimization.txt",
+					"!composer.json",
+					"!composer.lock",
+					"!phpcs.xml.dist",
+					"!phpunit.xml.dist",
+					"!vendor/**",
+					"!src/**",
+					"!scripts/**",
+					"!config/**",
+					"!tests/**",
+					"!bin/**"
 				],
 				dest: 'ultimate-addons-for-gutenberg/',
 			},
@@ -165,13 +168,10 @@ module.exports = function ( grunt ) {
 	grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
 
 	/* Register task started */
-	grunt.registerTask( 'release', [
-		'clean:zip',
-		'copy',
-		'compress',
-		'clean:main',
-	] );
-	grunt.registerTask( 'i18n', [ 'addtextdomain', 'makepot' ] );
+	grunt.registerTask("release", ["clean:zip", "copy","compress","clean:main"])
+	grunt.registerTask('release-no-clean', ['clean:zip', 'copy']);
+	grunt.registerTask( 'textdomain', [ 'addtextdomain' ] );
+	grunt.registerTask("i18n", ["addtextdomain", "makepot"])
 
 	// Default
 	//grunt.registerTask('default', ['style']);
