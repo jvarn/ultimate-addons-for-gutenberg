@@ -61,7 +61,7 @@ function addAttributes( settings ) {
 wp.hooks.addFilter(
 	'blocks.registerBlockType',
 	'uagb/advanced-control-block',
-	addAttributes
+    addAttributes
 );
 
 if ( "1" === enableMasonryGallery ) {
