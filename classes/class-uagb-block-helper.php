@@ -1778,8 +1778,8 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'margin-right'  => UAGB_Helper::get_css_value( $attr['imgRightMargin'], 'px' ),
 				),
 			);
-			if( 'custom' === $attr['imgSize'] ){
-				$selectors[' .uagb-team__image-wrap']['width']  = UAGB_Helper::get_css_value( $attr['imgWidth'], 'px' );
+			if ( 'custom' === $attr['imgSize'] ) {
+				$selectors[' .uagb-team__image-wrap']['width'] = UAGB_Helper::get_css_value( $attr['imgWidth'], 'px' );
 			}
 			if ( 'above' === $attr['imgPosition'] ) {
 				if ( 'center' === $attr['align'] ) {

@@ -169,6 +169,9 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 
 ## Changelog ##
 
+### 1.24.2 ###
+* Improvement: Team - Added custom img size option to set Image width. 
+
 ### 1.24.1 ###
 * Improvement: Reduce the size of static CSS.
 * Fix: Multiple blockquote post same content after clicking on tweet button.
