@@ -1776,10 +1776,11 @@ if ( ! class_exists( 'UAGB_Block_Helper' ) ) {
 					'margin-bottom' => UAGB_Helper::get_css_value( $attr['imgBottomMargin'], 'px' ),
 					'margin-left'   => UAGB_Helper::get_css_value( $attr['imgLeftMargin'], 'px' ),
 					'margin-right'  => UAGB_Helper::get_css_value( $attr['imgRightMargin'], 'px' ),
-					'width'         => UAGB_Helper::get_css_value( $attr['imgWidth'], 'px' ),
 				),
 			);
-
+			if( 'custom' === $attr['imgSize'] ){
+				$selectors[' .uagb-team__image-wrap']['width']  = UAGB_Helper::get_css_value( $attr['imgWidth'], 'px' );
+			}
 			if ( 'above' === $attr['imgPosition'] ) {
 				if ( 'center' === $attr['align'] ) {
 					$selectors[' .uagb-team__image-wrap']['margin-left']  = 'auto';

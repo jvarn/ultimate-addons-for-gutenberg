@@ -119,7 +119,9 @@ const Settings = ( props ) => {
 	};
 
 	const getImageSize = ( sizes ) => {
-		const sizeArr = [];
+		const sizeArr = [
+			{ value: 'custom', label: __( 'Custom', 'ultimate-addons-for-gutenberg' ) },
+		];
 		for ( const item in sizes ) {
 			sizeArr.push( { value: item, label: item } );
 		}
@@ -403,19 +405,21 @@ const Settings = ( props ) => {
 								setAttributes( { imgSize: value } )
 							}
 						/>
-						<RangeControl
-							label={ __(
-								'Width',
-								'ultimate-addons-for-gutenberg'
-							) }
-							value={ imgWidth }
-							onChange={ ( value ) =>
-								setAttributes( { imgWidth: value } )
-							}
-							min={ 0 }
-							max={ 500 }
-							allowReset
-						/>
+						{ 'custom' === imgSize && (
+							<RangeControl
+								label={ __(
+									'Width',
+									'ultimate-addons-for-gutenberg'
+								) }
+								value={ imgWidth }
+								onChange={ ( value ) =>
+									setAttributes( { imgWidth: value } )
+								}
+								min={ 0 }
+								max={ 500 }
+								allowReset
+							/>
+						)}
 					</>
 				) }
 			</PanelBody>

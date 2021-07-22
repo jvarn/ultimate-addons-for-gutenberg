@@ -42,6 +42,7 @@ function styling( props ) {
 		socialFontSizeTablet,
 		imgAlign,
 		imgWidth,
+		imgSize,
 		imgPosition,
 		titleSpace,
 		descSpace,
@@ -129,9 +130,11 @@ function styling( props ) {
 			'margin-bottom': generateCSSUnit( imgBottomMargin, 'px' ),
 			'margin-left': generateCSSUnit( imgLeftMargin, 'px' ),
 			'margin-right': generateCSSUnit( imgRightMargin, 'px' ),
-			width: generateCSSUnit( imgWidth, 'px' ),
 		},
 	};
+	if ('custom' === imgSize){
+		selectors[' .uagb-team__image-wrap']['width'] = generateCSSUnit( imgWidth, 'px' );
+	}
 
 	if ( 'above' == imgPosition ) {
 		if ( 'center' == align ) {
