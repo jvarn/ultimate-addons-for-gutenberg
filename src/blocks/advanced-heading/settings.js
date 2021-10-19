@@ -9,6 +9,7 @@ import InspectorTab, {
 import AdvancedPopColorControl from '@Components/color-control/advanced-pop-color-control.js';
 import Range from '@Components/range/Range.js';
 import MultiButtonsControl from '@Components/multi-buttons-control';
+import UAGAdvancedPanelBody from '@Components/advanced-panel-body';
 
 import { __ } from '@wordpress/i18n';
 
@@ -18,7 +19,7 @@ import {
 	InspectorControls,
 } from '@wordpress/block-editor';
 
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { SelectControl } from '@wordpress/components';
 
 // Extend component
 const Settings = ( props ) => {
@@ -114,7 +115,7 @@ const Settings = ( props ) => {
 
 	const generalPanel = () => {
 		return (
-			<PanelBody>
+			<UAGAdvancedPanelBody>
 				<MultiButtonsControl
 					setAttributes={ setAttributes }
 					label={ __(
@@ -152,13 +153,13 @@ const Settings = ( props ) => {
 						},
 					] }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
 	const headingPanel = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Heading', 'ultimate-addons-for-gutenberg' ) }
 			>
 				<Suspense fallback={ lazyLoader() }>
@@ -248,13 +249,13 @@ const Settings = ( props ) => {
 					max={ 500 }
 					displayUnit={ false }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
 	const subheadingPanel = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Description', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -331,13 +332,13 @@ const Settings = ( props ) => {
 						setAttributes( { subHeadingColor: value } )
 					}
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
 	const seperatorSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Separator', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -470,7 +471,7 @@ const Settings = ( props ) => {
 						displayUnit={ false }
 					/>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
