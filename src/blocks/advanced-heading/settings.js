@@ -9,8 +9,9 @@ import InspectorTab, {
 import AdvancedPopColorControl from '@Components/color-control/advanced-pop-color-control.js';
 import Range from '@Components/range/Range.js';
 import MultiButtonsControl from '@Components/multi-buttons-control';
-
+import UAGPresets from '@Components/presets';
 import { __ } from '@wordpress/i18n';
+import presets from './presets';
 
 import {
 	AlignmentToolbar,
@@ -113,6 +114,7 @@ const Settings = ( props ) => {
 	};
 
 	const generalPanel = () => {
+
 		return (
 			<PanelBody>
 				<MultiButtonsControl
@@ -149,6 +151,29 @@ const Settings = ( props ) => {
 						{
 							value: 'h6',
 							label: __( 'H6', 'ultimate-addons-for-gutenberg' ),
+						},
+					] }
+				/>
+
+				<UAGPresets
+					setAttributes = { setAttributes }
+					presetValues = { presets }
+					presetOptions={ [
+						{
+							value: 'default',
+							label: __( 'Default', 'ultimate-addons-for-gutenberg' ),
+						},
+						{
+							value: 'preset-1',
+							label: __( 'Preset 1', 'ultimate-addons-for-gutenberg' ),
+						},
+						{
+							value: 'preset-2',
+							label: __( 'Preset 2', 'ultimate-addons-for-gutenberg' ),
+						},
+						{
+							value: 'preset-3',
+							label: __( 'Preset 3', 'ultimate-addons-for-gutenberg' ),
 						},
 					] }
 				/>
