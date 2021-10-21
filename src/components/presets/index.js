@@ -1,6 +1,5 @@
 import { SelectControl } from '@wordpress/components';
 import { __ } from '@wordpress/i18n';
-import React, { useState } from 'react';
 
 const UAGPresets = ( props ) => {
 
