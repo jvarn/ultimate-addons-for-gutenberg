@@ -7,18 +7,29 @@ const UAGPresets = ( props ) => {
     const {
         setAttributes,
         presetValues,
-        presetOptions
+        presetOptions,
+        selectedPreset
     } = props;
 
-	const [ preset, setPreset ] = useState('default');
+    const updatePresets = (preset) => {
+        const selectedPresetValue =  presetValues[preset];
+
+        if ( selectedPresetValue ) {
+            selectedPresetValue.map( ( preset ) => {
+                console.log(preset);
+                setAttributes( { [preset.label]: preset.value } )
+            });
+        }
+    }
 
     const presetChangeHandler = (preset) => {
-        setPreset(preset);
+        setAttributes( { [selectedPreset.label]: preset } )
+        updatePresets(preset);
     }
 
     const presetSelector = (
         <SelectControl
-            value={preset}
+            value={selectedPreset.value}
             onChange={ presetChangeHandler }
             options={ presetOptions }
             label={ __( 'Select Preset', 'ultimate-addons-for-gutenberg' ) }

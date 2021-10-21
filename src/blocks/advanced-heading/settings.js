@@ -65,6 +65,7 @@ const Settings = ( props ) => {
 		separatorSpace,
 		headLoadGoogleFonts,
 		subHeadLoadGoogleFonts,
+		selectedPreset
 	} = attributes;
 
 	let loadHeadingGoogleFonts;
@@ -171,11 +172,8 @@ const Settings = ( props ) => {
 							value: 'preset-2',
 							label: __( 'Preset 2', 'ultimate-addons-for-gutenberg' ),
 						},
-						{
-							value: 'preset-3',
-							label: __( 'Preset 3', 'ultimate-addons-for-gutenberg' ),
-						},
 					] }
+					selectedPreset = { { value: selectedPreset, label: 'selectedPreset'} }
 				/>
 			</PanelBody>
 		);
