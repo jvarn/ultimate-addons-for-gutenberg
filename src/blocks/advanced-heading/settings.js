@@ -64,8 +64,7 @@ const Settings = ( props ) => {
 		headSpace,
 		separatorSpace,
 		headLoadGoogleFonts,
-		subHeadLoadGoogleFonts,
-		selectedPreset
+		subHeadLoadGoogleFonts
 	} = attributes;
 
 	let loadHeadingGoogleFonts;
@@ -158,22 +157,7 @@ const Settings = ( props ) => {
 
 				<UAGPresets
 					setAttributes = { setAttributes }
-					presetValues = { presets }
-					presetOptions={ [
-						{
-							value: 'default',
-							label: __( 'Default', 'ultimate-addons-for-gutenberg' ),
-						},
-						{
-							value: 'preset-1',
-							label: __( 'Preset 1', 'ultimate-addons-for-gutenberg' ),
-						},
-						{
-							value: 'preset-2',
-							label: __( 'Preset 2', 'ultimate-addons-for-gutenberg' ),
-						},
-					] }
-					selectedPreset = { { value: selectedPreset, label: 'selectedPreset'} }
+					presets = { presets }
 				/>
 			</PanelBody>
 		);

@@ -160,11 +160,7 @@ const attributes = {
 	},
 	separatorHoverColor: {
 		type: 'string',
-	},
-	selectedPreset: {
-		type: 'string',
-		default: 'default',
-	},
+	}
 };
 
 export default attributes;
