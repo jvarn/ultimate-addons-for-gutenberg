@@ -5,6 +5,10 @@ import WebfontLoader from '@Components/typography/fontloader';
 import { BlockAlignmentToolbar, BlockControls } from '@wordpress/block-editor';
 import { ToolbarGroup } from '@wordpress/components';
 
+
+
+import UAGAdvancedPanelBody from '@Components/advanced-panel-body';
+
 const Settings = ( props ) => {
 	const { state, inspectorControls, togglePreview } = props;
 

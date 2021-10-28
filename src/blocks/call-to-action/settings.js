@@ -20,7 +20,11 @@ import Border from '@Components/border';
 import SpacingControl from '@Components/spacing-control';
 import UAGTabsControl from '@Components/tabs';
 
-import { PanelBody, ToggleControl, TextControl } from '@wordpress/components';
+import { ToggleControl, TextControl } from '@wordpress/components';
+
+
+
+import UAGAdvancedPanelBody from '@Components/advanced-panel-body';
 
 const Settings = ( props ) => {
 	props = props.parentProps;
@@ -164,7 +168,7 @@ const Settings = ( props ) => {
 	// CTA settings.
 	const ctaSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Button', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -351,13 +355,13 @@ const Settings = ( props ) => {
 						) }
 					</>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
 	const ctaStyleSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Button', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -570,7 +574,7 @@ const Settings = ( props ) => {
 						/>
 					</>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
@@ -662,7 +666,7 @@ const Settings = ( props ) => {
 
 	const headingSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Heading', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -737,12 +741,12 @@ const Settings = ( props ) => {
 						setAttributes( { titleColor: value } )
 					}
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const descriptionSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Description', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -817,13 +821,13 @@ const Settings = ( props ) => {
 						setAttributes( { descColor: value } )
 					}
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	// Margin Settings.
 	const marginSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Spacing', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -889,12 +893,12 @@ const Settings = ( props ) => {
 						displayUnit={ false }
 					/>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const layouts = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Layout', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ true }
 			>
@@ -1091,7 +1095,7 @@ const Settings = ( props ) => {
 						) }
 					</>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 

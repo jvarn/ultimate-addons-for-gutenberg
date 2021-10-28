@@ -19,7 +19,6 @@ import Range from '@Components/range/Range.js';
 import UAGImage from '@Components/image';
 
 import {
-	PanelBody,
 	SelectControl,
 	ToggleControl,
 	ExternalLink,
@@ -34,6 +33,10 @@ let imageSizeOptions = [
 	{ value: 'medium', label: __( 'Medium', 'ultimate-addons-for-gutenberg' ) },
 	{ value: 'full', label: __( 'Large', 'ultimate-addons-for-gutenberg' ) },
 ];
+
+
+
+import UAGAdvancedPanelBody from '@Components/advanced-panel-body';
 
 const Settings = ( props ) => {
 	props = props.parentProps;
@@ -205,7 +208,7 @@ const Settings = ( props ) => {
 
 	const titleSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Title', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ true }
 			>
@@ -243,12 +246,12 @@ const Settings = ( props ) => {
 						},
 					] }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const imageSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Image', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -274,13 +277,13 @@ const Settings = ( props ) => {
 							}
 						/>
 					) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
 	const timeSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Time', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -372,12 +375,12 @@ const Settings = ( props ) => {
 						/>
 					</>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const costSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Cost', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -405,12 +408,12 @@ const Settings = ( props ) => {
 						'ultimate-addons-for-gutenberg'
 					) }
 				</ExternalLink>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const toolsSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Tools', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -472,12 +475,12 @@ const Settings = ( props ) => {
 						displayUnit={ false }
 					/>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const materialsSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Materials', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -539,13 +542,13 @@ const Settings = ( props ) => {
 						displayUnit={ false }
 					/>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
 	const headingColorSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Heading', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ true }
 			>
@@ -617,12 +620,12 @@ const Settings = ( props ) => {
 						label: 'headLineHeightTablet',
 					} }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const secheadingColorSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __(
 					'Secondary Heading',
 					'ultimate-addons-for-gutenberg'
@@ -700,12 +703,12 @@ const Settings = ( props ) => {
 						label: 'priceLineHeightTablet',
 					} }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const descriptionColorSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Description', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -780,12 +783,12 @@ const Settings = ( props ) => {
 						label: 'subHeadLineHeightTablet',
 					} }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const spacingSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Spacing', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -846,7 +849,7 @@ const Settings = ( props ) => {
 					max={ 500 }
 					displayUnit={ false }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 

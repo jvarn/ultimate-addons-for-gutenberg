@@ -4,6 +4,10 @@ import React from 'react';
 import { BlockAlignmentToolbar, BlockControls } from '@wordpress/block-editor';
 import { ToolbarGroup } from '@wordpress/components';
 
+
+
+import UAGAdvancedPanelBody from '@Components/advanced-panel-body';
+
 const Settings = ( props ) => {
 	const { state, togglePreview, inspectorControls } = props;
 

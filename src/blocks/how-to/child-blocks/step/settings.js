@@ -10,7 +10,6 @@ import WebfontLoader from '@Components/typography/fontloader';
 import AdvancedPopColorControl from '@Components/color-control/advanced-pop-color-control.js';
 
 import {
-	PanelBody,
 	SelectControl,
 	ToggleControl,
 	TextControl,
@@ -23,6 +22,10 @@ let imageSizeOptions = [
 	{ value: 'medium', label: __( 'Medium', 'ultimate-addons-for-gutenberg' ) },
 	{ value: 'full', label: __( 'Large', 'ultimate-addons-for-gutenberg' ) },
 ];
+
+
+
+import UAGAdvancedPanelBody from '@Components/advanced-panel-body';
 
 const Settings = ( props ) => {
 	props = props.parentProps;
@@ -165,7 +168,7 @@ const Settings = ( props ) => {
 
 	const imageControls = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				initialOpen={ true }
 				title={ __( 'Image', 'ultimate-addons-for-gutenberg' ) }
 			>
@@ -207,13 +210,13 @@ const Settings = ( props ) => {
 					)
 					
 				}
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const urlControls = () => {
 
 		return (
-			<PanelBody title={__( 'Add Link' )} initialOpen={false}>
+			<UAGAdvancedPanelBody title={__( 'Add Link' )} initialOpen={false}>
 				<SelectControl
 					label={__( 'Type' )}
 					value={urlType}
@@ -252,13 +255,13 @@ const Settings = ( props ) => {
 						/>
 					</>
 				)}
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	}
 	const linkStyle = () => {
 
 		return (
-			<PanelBody title={__( 'Link' )} initialOpen={true}>
+			<UAGAdvancedPanelBody title={__( 'Link' )} initialOpen={true}>
 				<TypographyControl
 					label={__( 'Typography' )}
 					attributes={attributes}
@@ -312,13 +315,13 @@ const Settings = ( props ) => {
 						setAttributes( { urlColor: value } )
 					}
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	}
 	const titleStyle = () => {
 
 		return (
-			<PanelBody title={__( 'Title' )} initialOpen={true}>
+			<UAGAdvancedPanelBody title={__( 'Title' )} initialOpen={true}>
 				<TypographyControl
 					label={__( 'Typography' )}
 					attributes={attributes}
@@ -372,14 +375,14 @@ const Settings = ( props ) => {
 						setAttributes( { titleColor: value } )
 					}
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	}
 
 	const descriptionStyle = () => {
 
 		return (
-			<PanelBody title={__( 'Description' )} initialOpen={true}>
+			<UAGAdvancedPanelBody title={__( 'Description' )} initialOpen={true}>
 				<TypographyControl
 					label={__( 'Typography' )}
 					attributes={attributes}
@@ -433,7 +436,7 @@ const Settings = ( props ) => {
 						setAttributes( { descriptionColor: value } )
 					}
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	}
 

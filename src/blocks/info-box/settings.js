@@ -24,7 +24,6 @@ import {
 } from '@wordpress/block-editor';
 
 import {
-	PanelBody,
 	SelectControl,
 	ToggleControl,
 	TextControl,
@@ -38,6 +37,10 @@ let imageSizeOptions = [
 	{ value: 'medium', label: __( 'Medium', 'ultimate-addons-for-gutenberg' ) },
 	{ value: 'full', label: __( 'Large', 'ultimate-addons-for-gutenberg' ) },
 ];
+
+
+
+import UAGAdvancedPanelBody from '@Components/advanced-panel-body';
 
 const Settings = ( props ) => {
 	props = props.parentProps;
@@ -321,7 +324,7 @@ const Settings = ( props ) => {
 	// Global Controls.
 	const imageIconPanel = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Image/Icon', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -519,14 +522,14 @@ const Settings = ( props ) => {
 							) }
 					</>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
 	// Typography settings.
 	const typographySettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Content', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -585,14 +588,14 @@ const Settings = ( props ) => {
 						'ultimate-addons-for-gutenberg'
 					) }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
 	// Separator settings.
 	const seperatorSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Separator', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -682,13 +685,13 @@ const Settings = ( props ) => {
 						] }
 					/>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
 	const ctaSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __(
 					'Call To Action',
 					'ultimate-addons-for-gutenberg'
@@ -849,14 +852,14 @@ const Settings = ( props ) => {
 						) }
 					/>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const styleSettings = () => {
 		return (
 			<>
 				{ '' !== icon && (
-					<PanelBody title="Icon/Image" initialOpen={ false }>
+					<UAGAdvancedPanelBody title="Icon/Image" initialOpen={ false }>
 						<>
 							{ ' ' }
 							{ source_type === 'icon' && (
@@ -1058,10 +1061,10 @@ const Settings = ( props ) => {
 								} }
 							/>
 						</>
-					</PanelBody>
+					</UAGAdvancedPanelBody>
 				) }
 				{ showPrefix && (
-					<PanelBody title="Prefix" initialOpen={ false }>
+					<UAGAdvancedPanelBody title="Prefix" initialOpen={ false }>
 						<>
 							<AdvancedPopColorControl
 								label={ __(
@@ -1165,10 +1168,10 @@ const Settings = ( props ) => {
 								setAttributes={ setAttributes }
 							/>
 						</>
-					</PanelBody>
+					</UAGAdvancedPanelBody>
 				) }
 				{ showTitle && (
-					<PanelBody title="Title" initialOpen={ false }>
+					<UAGAdvancedPanelBody title="Title" initialOpen={ false }>
 						<>
 							<AdvancedPopColorControl
 								label={ __(
@@ -1272,10 +1275,10 @@ const Settings = ( props ) => {
 								setAttributes={ setAttributes }
 							/>
 						</>
-					</PanelBody>
+					</UAGAdvancedPanelBody>
 				) }
 				{ 'null' !== seperatorStyle && (
-					<PanelBody title="Separator" initialOpen={ false }>
+					<UAGAdvancedPanelBody title="Separator" initialOpen={ false }>
 						<>
 							{ 'none' !== seperatorStyle && (
 								<>
@@ -1386,10 +1389,10 @@ const Settings = ( props ) => {
 								setAttributes={ setAttributes }
 							/>
 						</>
-					</PanelBody>
+					</UAGAdvancedPanelBody>
 				) }
 				{ showDesc && (
-					<PanelBody title="Description" initialOpen={ false }>
+					<UAGAdvancedPanelBody title="Description" initialOpen={ false }>
 						<>
 							<AdvancedPopColorControl
 								label={ __(
@@ -1495,10 +1498,10 @@ const Settings = ( props ) => {
 								setAttributes={ setAttributes }
 							/>
 						</>
-					</PanelBody>
+					</UAGAdvancedPanelBody>
 				) }
 				{ inheritFromTheme && ctaType === 'text' && (
-					<PanelBody title="CTA" initialOpen={ false }>
+					<UAGAdvancedPanelBody title="CTA" initialOpen={ false }>
 						<>
 							<AdvancedPopColorControl
 								label={ __(
@@ -1576,12 +1579,12 @@ const Settings = ( props ) => {
 								disableLineHeight={ true }
 							/>
 						</>
-					</PanelBody>
+					</UAGAdvancedPanelBody>
 				) }
 				{ ! inheritFromTheme &&
 					'none' !== ctaType &&
 					'all' !== ctaType && (
-						<PanelBody title="CTA" initialOpen={ false }>
+						<UAGAdvancedPanelBody title="CTA" initialOpen={ false }>
 							<>
 								{ ctaType === 'text' && (
 									<>
@@ -1907,7 +1910,7 @@ const Settings = ( props ) => {
 									/>
 								) }
 							</>
-						</PanelBody>
+						</UAGAdvancedPanelBody>
 					) }
 			</>
 		);

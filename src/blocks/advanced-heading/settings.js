@@ -9,7 +9,6 @@ import InspectorTab, {
 import AdvancedPopColorControl from '@Components/color-control/advanced-pop-color-control.js';
 import Range from '@Components/range/Range.js';
 import MultiButtonsControl from '@Components/multi-buttons-control';
-import UAGAdvancedPanelBody from '@Components/advanced-panel-body';
 
 import { __ } from '@wordpress/i18n';
 
@@ -22,6 +21,10 @@ import {
 import { SelectControl } from '@wordpress/components';
 
 // Extend component
+
+
+import UAGAdvancedPanelBody from '@Components/advanced-panel-body';
+
 const Settings = ( props ) => {
 	props = props.parentProps;
 	const { attributes, setAttributes } = props;

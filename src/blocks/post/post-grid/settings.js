@@ -22,7 +22,6 @@ import UAGTabsControl from '@Components/tabs';
 const MAX_POSTS_COLUMNS = 8;
 
 import {
-	PanelBody,
 	SelectControl,
 	ToggleControl,
 	ToolbarGroup,
@@ -36,6 +35,10 @@ import {
 	BlockAlignmentToolbar,
 	BlockControls,
 } from '@wordpress/block-editor';
+
+
+
+import UAGAdvancedPanelBody from '@Components/advanced-panel-body';
 
 const Settings = ( props ) => {
 	// Caching all Props
@@ -360,7 +363,7 @@ const Settings = ( props ) => {
 	}
 	const generalSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'General', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ true }
 			>
@@ -569,7 +572,7 @@ const Settings = ( props ) => {
 						'ultimate-addons-for-gutenberg'
 					) }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const paginationSettings = () => {
@@ -578,7 +581,7 @@ const Settings = ( props ) => {
 		}
 
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Pagination', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -618,12 +621,12 @@ const Settings = ( props ) => {
 					value={ paginationNextText }
 					onChange={ onChangeNextText }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const imageSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Image', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -690,12 +693,12 @@ const Settings = ( props ) => {
 						}
 					/>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const contentSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Content', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -881,12 +884,12 @@ const Settings = ( props ) => {
 							displayUnit={ false }
 						/>
 					) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const readMoreLinkSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __(
 					'Read More Link',
 					'ultimate-addons-for-gutenberg'
@@ -927,12 +930,12 @@ const Settings = ( props ) => {
 						/>
 					</>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const spacingSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Blog Settings', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -1049,13 +1052,13 @@ const Settings = ( props ) => {
 						label: 'spacingLinkPadding',
 					} }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
 	const imageStyle = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Image', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			> 
@@ -1105,13 +1108,13 @@ const Settings = ( props ) => {
 					} }
 				/>
 			}
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 
 	const titleStyle = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Title', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -1210,12 +1213,12 @@ const Settings = ( props ) => {
 						/>
 					</>
 				) }
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const metaStyle = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Meta', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -1309,12 +1312,12 @@ const Settings = ( props ) => {
 						label: 'metaBottomSpaceUnit',
 					} }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const excerptStyle = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Excerpt', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -1406,12 +1409,12 @@ const Settings = ( props ) => {
 						label: 'excerptBottomSpaceUnit',
 					} }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const readMoreLinkStyleSettings = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __(
 					'Read More Link',
 					'ultimate-addons-for-gutenberg'
@@ -1683,12 +1686,12 @@ const Settings = ( props ) => {
 						label: 'spacingLink',
 					} }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const paginationStyle = () => {
 		return (
-			<PanelBody
+			<UAGAdvancedPanelBody
 				title={ __( 'Pagination', 'ultimate-addons-for-gutenberg' ) }
 				initialOpen={ false }
 			>
@@ -1902,7 +1905,7 @@ const Settings = ( props ) => {
 						label: 'paginationSpacingUnit',
 					} }
 				/>
-			</PanelBody>
+			</UAGAdvancedPanelBody>
 		);
 	};
 	const inspectorControlsSettings = () => {
