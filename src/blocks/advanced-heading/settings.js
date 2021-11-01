@@ -158,7 +158,6 @@ const Settings = ( props ) => {
 				<UAGPresets
 					setAttributes = { setAttributes }
 					presets = { presets }
-					presetInputType = 'radioImage'
 				/>
 			</PanelBody>
 		);

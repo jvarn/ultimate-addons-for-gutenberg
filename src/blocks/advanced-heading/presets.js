@@ -1,4 +1,5 @@
 import { __ } from '@wordpress/i18n';
+import { applyFilters } from '@wordpress/hooks';
 
 let presets = [
     {
@@ -33,4 +34,7 @@ let presets = [
     },
 ];
 
-export default presets;
+export default applyFilters(
+    `uag_advanced_heading_presets`,
+    presets
+);
