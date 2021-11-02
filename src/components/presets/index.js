@@ -27,6 +27,11 @@ const UAGPresets = ( props ) => {
         setPreset(selectedPreset);
         if ( presets ) {
             presets.map( ( preset ) => {
+                if ( 'default' !== selectedPreset && 'default' === preset.value && preset.attributes ) {
+                    preset.attributes.map( ( presetItem ) => {
+                        setAttributes( { [presetItem.label]: presetItem.value } )
+                    });
+                }
                 if ( preset.value && preset.value === selectedPreset && preset.attributes ) {
                     preset.attributes.map( ( presetItem ) => {
                         setAttributes( { [presetItem.label]: presetItem.value } )
