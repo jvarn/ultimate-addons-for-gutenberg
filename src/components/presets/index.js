@@ -21,42 +21,45 @@ const UAGPresets = ( props ) => {
         label
     } = props;
 
-	const [ selectedPreset, setPreset ] = useState( '' );
+	const [ selectedPresetState, setPreset ] = useState( '' );
 
-    const updatePresets = (selectedPreset) => {
-        setPreset(selectedPreset);
+    const updatePresets = ( selectedPreset ) => {
+        setPreset( selectedPreset );
         if ( presets ) {
             presets.map( ( preset ) => {
                 if ( 'default' !== selectedPreset && 'default' === preset.value && preset.attributes ) {
                     preset.attributes.map( ( presetItem ) => {
                         setAttributes( { [presetItem.label]: presetItem.value } )
-                    });
+                        return presetItem;
+                    } );
                 }
                 if ( preset.value && preset.value === selectedPreset && preset.attributes ) {
                     preset.attributes.map( ( presetItem ) => {
                         setAttributes( { [presetItem.label]: presetItem.value } )
-                    });
-                }   
-            });
+                        return presetItem;
+                    } );
+                }  
+                return preset; 
+            } );
         }
     }
 
-    const presetRadioImageOptions = presets.map( (preset) => {
-        let key = preset.value;
-		let checked = selectedPreset === key ? true : false;
+    const presetRadioImageOptions = presets.map( ( preset ) => {
+        const key = preset.value;
+		const checked = selectedPresetState === key ? true : false;
 		return (
             <>
-                <input key={key} className="uag-presets-radio-input" type="radio" value={key} checked={checked} onChange={() => updatePresets(key)} onClick={() => updatePresets(key)}/>
+                <input key={key} className="uag-presets-radio-input" type="radio" value={key} checked={checked} onChange={() => updatePresets( key )} onClick={() => updatePresets( key )}/>
 
                 <label htmlFor={key} className="uag-presets-radio-input-label">
                     <span dangerouslySetInnerHTML={{
                         __html: preset.icon
                     }}/>
-                    <span className="uag-presets-radio-image-clickable" onClick={() => updatePresets(key)} title={preset.label}></span>
+                    <span className="uag-presets-radio-image-clickable" onClick={() => updatePresets( key )} title={preset.label}></span> { /* eslint-disable-line */ }
                 </label> 
             </>
         );
-	});
+	} );
     
     const presetDropdown = (
         <SelectControl

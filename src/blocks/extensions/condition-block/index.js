@@ -266,7 +266,7 @@ addFilter(
 	'uagb/advanced-heading-presets',
 	function ( content ) {
 		
-		let presets = [
+		const presets = [
 			{
 				value: 'preset-3',
 				label: __( 'Preset 3', 'ultimate-addons-for-gutenberg' ),
@@ -278,6 +278,6 @@ addFilter(
 				icon: '<svg x="0px" y="0px" viewBox="0 0 84.2 81"><path classname="st0" d="M0.3,77.4V4c0-2,1.6-3.5,3.5-3.5h76.9c2,0,3.5,1.6,3.5,3.5v73.5c0,2-1.6,3.5-3.5,3.5H3.9 C1.9,81,0.4,79.4,0.3,77.4z M3.9,2.2C2.9,2.2,2.1,3,2.1,4v73.5c0,1,0.8,1.8,1.8,1.8h76.9c1,0,1.8-0.8,1.8-1.8V4 c0-1-0.8-1.8-1.8-1.8H3.9z"></path><g><path classname="st0" d="M14.8,28.4c0-1.2,0.8-2.1,1.8-2.1h50.9c1,0,1.8,0.9,1.8,2.1v-0.6c0,1.2-0.8,2.1-1.8,2.1H16.6c-1,0-1.8-0.9-1.8-2.1V28.4L14.8,28.4z"></path></g><g><path classname="st0" d="M14.8,40.8c0-1.2,0.8-2.1,1.8-2.1h50.9c1,0,1.8,0.9,1.8,2.1v-0.6c0,1.2-0.8,2.1-1.8,2.1H16.6c-1,0-1.8-0.9-1.8-2.1V40.8L14.8,40.8z"></path></g><g><path classname="st0" d="M14.8,53.2c0-1.2,0.8-2.1,1.8-2.1h50.9c1,0,1.8,0.9,1.8,2.1v-0.6c0,1.2-0.8,2.1-1.8,2.1H16.6c-1,0-1.8-0.9-1.8-2.1V53.2L14.8,53.2z"></path></g></svg>',
 			},
 		];
-		return content.concat(presets);
+		return content.concat( presets );
 	}
 );

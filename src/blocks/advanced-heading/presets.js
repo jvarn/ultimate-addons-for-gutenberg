@@ -1,7 +1,7 @@
 import { __ } from '@wordpress/i18n';
 import { applyFilters } from '@wordpress/hooks';
 
-let presets = [
+const presets = [
     {
         value: 'default',
         label: __( 'Default', 'ultimate-addons-for-gutenberg' ),
