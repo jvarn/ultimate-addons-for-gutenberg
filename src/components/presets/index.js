@@ -17,13 +17,13 @@ const UAGPresets = ( props ) => {
     const {
         setAttributes,
         presets,
-        presetInputType
+        presetInputType,
+        label
     } = props;
 
 	const [ selectedPreset, setPreset ] = useState( '' );
 
     const updatePresets = (selectedPreset) => {
-        console.log(selectedPreset);
         setPreset(selectedPreset);
         if ( presets ) {
             presets.map( ( preset ) => {
@@ -58,14 +58,17 @@ const UAGPresets = ( props ) => {
             className='uagb-presets-dropdown'
             onChange={ updatePresets }
             options={ presets }
-            label={ __( 'Select Preset', 'ultimate-addons-for-gutenberg' ) }
+            label={ label }
         />
     );
     
     const presetRadioImage = (
-        <div className='uagb-presets-radio-image-wrap'>
-            {presetRadioImageOptions}
-        </div>
+        <>
+            <label htmlFor="uag-presets-label" className="uag-presets-label">{label}</label>
+            <div className='uagb-presets-radio-image-wrap'>
+                {presetRadioImageOptions}
+            </div>
+        </>
     );
 
     return (
@@ -78,6 +81,7 @@ const UAGPresets = ( props ) => {
 
 UAGPresets.defaultProps = {
 	presetInputType: 'dropdown',
+    label: __( 'Select Preset', 'ultimate-addons-for-gutenberg' )
 };
 
 export default React.memo( UAGPresets );
