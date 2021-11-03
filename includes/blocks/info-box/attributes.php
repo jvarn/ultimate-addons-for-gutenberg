@@ -69,6 +69,7 @@ return array(
 	'seperatorColor'          => '#333',
 	'seperatorThickness'      => '2',
 	'thicknessUnit'           => 'px',
+	'ctaType'                 => 'none',
 	'ctaLinkColor'            => '#333',
 	'ctaFontSize'             => '',
 	'ctaFontSizeType'         => 'px',
