@@ -5,7 +5,7 @@
 const attributes = {
 	inheritFromTheme: {
 		type: 'boolean',
-		default: false,
+		default: true,
 	},
 	prefixTitle: {
 		source: 'html',

@@ -9,7 +9,7 @@
 
 return array(
 	'classMigrate'            => false,
-	'inheritFromTheme'        => false,
+	'inheritFromTheme'        => true,
 	'headingAlign'            => 'center',
 	'headingColor'            => '',
 	'subHeadingColor'         => '',

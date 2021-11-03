@@ -588,7 +588,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 			return array(
 				'inheritFromTheme'        => array(
 					'type'    => 'boolean',
-					'default' => false,
+					'default' => true,
 				),
 				'block_id'                => array(
 					'type'    => 'string',
@@ -746,8 +746,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 
 				// Title Attributes.
 				'titleColor'              => array(
-					'type'    => 'string',
-					'default' => '#3b3b3b',
+					'type' => 'string',
 				),
 				'titleTag'                => array(
 					'type'    => 'string',

@@ -119,11 +119,9 @@ const attributes = {
 	// Color
 	backgroundColor: {
 		type: 'string',
-		default: '#f4f4f4',
 	},
 	linkColor: {
 		type: 'string',
-		default: '#333',
 	},
 	linkHoverColor: {
 		type: 'string',
