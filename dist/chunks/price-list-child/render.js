@@ -1,1 +1,92 @@
-(window.webpackJsonp_ultimate_addons_for_gutenberg=window.webpackJsonp_ultimate_addons_for_gutenberg||[]).push([[83],{537:function(e,t,a){"use strict";a.r(t);var r=a(4),s=a.n(r),c=a(38),l=a(1),n=a.n(l),i=a(11),m=a(24),o=a(46),u=a(47),b=a(48),p=a(10);const _=e=>{e=e.parentProps;const{className:t,setAttributes:a,attributes:r}=e,{imagePosition:_}=r,d=Object(p.select)("core/block-editor").getBlockHierarchyRootClientId(e.clientId),g=Object(p.select)("core/block-editor").getBlockAttributes(d),E=g?g.imagePosition:_;return n.a.createElement("div",{className:s()(t,"uagb-rest_menu__outer-wrap","uagb-block-"+e.clientId.substr(0,8),...Object(c.a)(r))},n.a.createElement(l.Suspense,{fallback:Object(i.a)()},n.a.createElement("div",{className:"uagb-rm__content"},("top"===E||"left"===E)&&n.a.createElement(m.a,{attributes:r}),n.a.createElement("div",{className:"uagb-rm__text-wrap"},n.a.createElement(n.a.Fragment,null,n.a.createElement("div",{className:"uagb-rm-details"},n.a.createElement("div",{className:"uagb-rm__title-wrap"},n.a.createElement(o.a,{attributes:r,setAttributes:a,props:e}),n.a.createElement("div",{className:"uagb-rest-menu-text-wrap"},n.a.createElement(b.a,{attributes:r,setAttributes:a,props:e}))),n.a.createElement("div",{className:"uagb-rm__price-wrap"},n.a.createElement(u.a,{attributes:r,setAttributes:a,props:e}))))),"right"===E&&n.a.createElement(m.a,{attributes:r}))),n.a.createElement("div",{className:"uagb-rm__separator-parent"},n.a.createElement("div",{className:"uagb-rm__separator"})))};t.default=n.a.memo(_)}}]);
+(window["webpackJsonp_ultimate_addons_for_gutenberg"] = window["webpackJsonp_ultimate_addons_for_gutenberg"] || []).push([["chunks/price-list-child/render"],{
+
+/***/ "./src/blocks/price-list-child/render.js":
+/*!***********************************************!*\
+  !*** ./src/blocks/price-list-child/render.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _price_list_classes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../price-list/classes */ "./src/blocks/price-list/classes.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Controls_lazy_loader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @Controls/lazy-loader */ "./blocks-config/uagb-controls/lazy-loader.js");
+/* harmony import */ var _components_RestMenuImage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/RestMenuImage */ "./src/blocks/price-list-child/components/RestMenuImage.js");
+/* harmony import */ var _components_Title__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/Title */ "./src/blocks/price-list-child/components/Title.js");
+/* harmony import */ var _components_Price__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Price */ "./src/blocks/price-list-child/components/Price.js");
+/* harmony import */ var _components_Description__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Description */ "./src/blocks/price-list-child/components/Description.js");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @wordpress/data */ "@wordpress/data");
+/* harmony import */ var _wordpress_data__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_wordpress_data__WEBPACK_IMPORTED_MODULE_8__);
+
+
+
+
+
+
+
+
+
+
+const Render = props => {
+  props = props.parentProps;
+  const {
+    className,
+    setAttributes,
+    attributes
+  } = props; // Setup the attributes.
+
+  const {
+    imagePosition
+  } = attributes;
+  const parentClientId = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_8__["select"])('core/block-editor').getBlockHierarchyRootClientId(props.clientId);
+  const parentAttributes = Object(_wordpress_data__WEBPACK_IMPORTED_MODULE_8__["select"])('core/block-editor').getBlockAttributes(parentClientId);
+  const position = parentAttributes ? parentAttributes.imagePosition : imagePosition;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, 'uagb-rest_menu__outer-wrap', `uagb-block-${props.clientId.substr(0, 8)}`, ...Object(_price_list_classes__WEBPACK_IMPORTED_MODULE_1__["default"])(attributes))
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2__["Suspense"], {
+    fallback: Object(_Controls_lazy_loader__WEBPACK_IMPORTED_MODULE_3__["default"])()
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    className: "uagb-rm__content"
+  }, (position === 'top' || position === 'left') && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_RestMenuImage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    attributes: attributes
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    className: "uagb-rm__text-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_2___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    className: "uagb-rm-details"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    className: "uagb-rm__title-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Title__WEBPACK_IMPORTED_MODULE_5__["default"], {
+    attributes: attributes,
+    setAttributes: setAttributes,
+    props: props
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    className: "uagb-rest-menu-text-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Description__WEBPACK_IMPORTED_MODULE_7__["default"], {
+    attributes: attributes,
+    setAttributes: setAttributes,
+    props: props
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    className: "uagb-rm__price-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_Price__WEBPACK_IMPORTED_MODULE_6__["default"], {
+    attributes: attributes,
+    setAttributes: setAttributes,
+    props: props
+  }))))), position === 'right' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_RestMenuImage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    attributes: attributes
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    className: "uagb-rm__separator-parent"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
+    className: "uagb-rm__separator"
+  })));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.memo(Render));
+
+/***/ })
+
+}]);
+//# sourceMappingURL=render.js.map

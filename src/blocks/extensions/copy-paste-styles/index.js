@@ -1,0 +1,112 @@
+import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
+import { __ } from '@wordpress/i18n';
+import { registerPlugin } from '@wordpress/plugins';
+import { select, withSelect } from '@wordpress/data';
+import { compose } from '@wordpress/compose';
+import { withSpokenMessages } from '@wordpress/components';
+
+
+
+const UAGCopyPasteStyles = (props) => {
+
+    const copyStylesHandler = () => {
+       
+        let selectedBlock = select( 'core/block-editor' ).getSelectedBlock();
+
+        if ( ! selectedBlock ) {
+            return;
+        }
+
+        let styles = {};
+
+        let selectedBlockName = selectedBlock.name.replace( 'uagb/', '' );
+
+        const {
+            attributes
+        } = selectedBlock;
+
+        const {
+            blockStyles
+        } = attributes;
+
+        if ( ! blockStyles ) {
+            return;
+        }
+
+        blockStyles.map( ( attribute ) => {
+            styles[attribute] = attributes[attribute];
+        } );
+
+        console.log(styles);
+
+        localStorage.setItem(`uag-${selectedBlockName}-styles`, JSON.stringify(styles));
+    };
+
+    const pasteStylesHandler = () => {
+        
+        let selectedBlock = select( 'core/block-editor' ).getSelectedBlock();
+
+        if ( ! selectedBlock ) {
+            return;
+        }
+
+        let selectedBlockName = selectedBlock.name.replace( 'uagb/', '' );
+
+        let styles = JSON.parse(localStorage.getItem(`uag-${selectedBlockName}-styles`));
+
+        if ( ! styles ) {
+            return;
+        }
+        console.log(select( 'core/block-editor' ) );
+        console.log(select('core/edit-post'));
+        console.log(select( 'core/block-editor' ).getSettings(selectedBlock.clientId));
+        console.log(styles);
+    };
+
+    return (
+        <>
+            <PluginBlockSettingsMenuItem
+                label={ __( 'UAG Copy Styles', 'ultimate-addons-for-gutenberg' ) }
+                onClick={copyStylesHandler}
+            >
+            </PluginBlockSettingsMenuItem>
+            <PluginBlockSettingsMenuItem
+                label={ __( 'UAG Paste Styles', 'ultimate-addons-for-gutenberg' ) }
+                onClick={pasteStylesHandler}
+            >
+            </PluginBlockSettingsMenuItem>
+        </>
+    );
+};
+
+// export default compose(
+// 	withSelect( ( select ) => {
+// 		const selectedBlock = select( 'core/block-editor' ).getSelectedBlock();
+
+// 		if ( ! selectedBlock ) {
+// 			return {};
+// 		}
+
+// 		return {
+// 			selectedBlock,
+// 		};
+// 	} ),
+// )( UAGCopyPasteStyles );
+
+export default compose( [
+	withSelect( () => {
+		const { getSelectedBlockCount, getSelectedBlock, getMultiSelectedBlocks } = select( 'core/block-editor' );
+		const { getBlock } = select( 'core/block-editor' );
+
+		return {
+			selectedBlockCount: getSelectedBlockCount(),
+			selectedBlock: getSelectedBlock(),
+			selectedBlocks: getMultiSelectedBlocks(),
+		};
+	} ),
+	withSpokenMessages,
+] )( UAGCopyPasteStyles );
+
+registerPlugin( 'uag-copy-paste', {
+	render: UAGCopyPasteStyles,
+} );

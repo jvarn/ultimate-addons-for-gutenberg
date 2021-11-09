@@ -1,1 +1,179 @@
-(window.webpackJsonp_ultimate_addons_for_gutenberg=window.webpackJsonp_ultimate_addons_for_gutenberg||[]).push([[32],{572:function(e,a,t){"use strict";t.r(a);var n=t(1),l=t.n(n),o=t(2),r=t(6),c=t(68),s=t(21),m=t(5);const u=[{label:"YYYY",value:""}],i=[{label:"MM",value:""}],d=[{label:"DD",value:""}];let b;for(b=1930;b<=2030;b++)u.push({label:""+b,value:""+b});for(b=1;b<=12;b++){const e=b<10?"0"+b:""+b;i.push({label:e,value:e})}for(b=1;b<=31;b++){const e=b<10?"0"+b:""+b;d.push({label:e,value:e})}const g=e=>{e=e.parentProps;const{attributes:a,setAttributes:t}=e,{dateRequired:n,additonalVal:b,minYear:g,minMonth:p,minDay:h,maxYear:_,maxMonth:E,maxDay:v}=a;let C="",D="";g&&p&&h&&(C=g+"-"+p+"-"+h),_&&E&&v&&(D=_+"-"+E+"-"+v);let f="";return Date.parse(C)>Date.parse(D)&&(f=l.a.createElement("p",{className:"uagb-forms-date-invalidate"},Object(o.__)("Invalid date range selected","ultimate-addons-for-gutenberg"))),l.a.createElement(l.a.Fragment,null,l.a.createElement(m.InspectorControls,null,l.a.createElement(c.a,{tabs:["general","advance"]},l.a.createElement(s.b,s.a.general,l.a.createElement(r.PanelBody,{initialOpen:!0},l.a.createElement(r.ToggleControl,{label:Object(o.__)("Required","ultimate-addons-for-gutenberg"),checked:n,onChange:()=>t({dateRequired:!n})}),l.a.createElement(r.ToggleControl,{label:Object(o.__)("Additional Validation","ultimate-addons-for-gutenberg"),checked:b,onChange:()=>t({additonalVal:!b}),help:Object(o.__)("Helps to set range of calender","ultimate-addons-for-gutenberg")}),b&&l.a.createElement(l.a.Fragment,null,l.a.createElement("p",null,Object(o.__)("From","ultimate-addons-for-gutenberg")," :"),l.a.createElement(r.SelectControl,{className:"minDate",label:"Year",value:g,options:u,onChange:e=>t({newMinYear:e})}),l.a.createElement(r.SelectControl,{className:"minDate",label:"Month",value:p,options:i,onChange:e=>t({newMinMonth:e})}),l.a.createElement(r.SelectControl,{className:"minDate",label:"Date",value:h,options:d,onChange:e=>t({newMinDay:e})}),l.a.createElement("p",null," ",Object(o.__)("To","ultimate-addons-for-gutenberg")," :"),l.a.createElement(r.SelectControl,{className:"maxDate",label:"Year",value:_,options:u,onChange:e=>t({newMaxYear:e})}),l.a.createElement(r.SelectControl,{className:"maxDate",label:"Month",value:E,options:i,onChange:e=>t({newMaxMonth:e})}),l.a.createElement(r.SelectControl,{className:"maxDate",label:"Date",value:v,options:d,onChange:e=>t({newMaxDay:e})}),f))),l.a.createElement(s.b,s.a.advance))))};a.default=l.a.memo(g)}}]);
+(window["webpackJsonp_ultimate_addons_for_gutenberg"] = window["webpackJsonp_ultimate_addons_for_gutenberg"] || []).push([["chunks/form/date-settings"],{
+
+/***/ "./src/blocks/forms/child-blocks/date/settings.js":
+/*!********************************************************!*\
+  !*** ./src/blocks/forms/child-blocks/date/settings.js ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Components_inspector_tabs_InspectorTabs_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @Components/inspector-tabs/InspectorTabs.js */ "./src/components/inspector-tabs/InspectorTabs.js");
+/* harmony import */ var _Components_inspector_tabs_InspectorTab_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @Components/inspector-tabs/InspectorTab.js */ "./src/components/inspector-tabs/InspectorTab.js");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+
+const YearDefaults = [{
+  label: 'YYYY',
+  value: ''
+}];
+const MonthsDefaults = [{
+  label: 'MM',
+  value: ''
+}];
+const dateDefaults = [{
+  label: 'DD',
+  value: ''
+}];
+let index;
+
+for (index = 1930; index <= 2030; index++) {
+  YearDefaults.push({
+    label: `${index}`,
+    value: `${index}`
+  });
+}
+
+for (index = 1; index <= 12; index++) {
+  const twoDigitMonth = index < 10 ? `0${index}` : `${index}`;
+  MonthsDefaults.push({
+    label: twoDigitMonth,
+    value: twoDigitMonth
+  });
+}
+
+for (index = 1; index <= 31; index++) {
+  const twoDigitDate = index < 10 ? `0${index}` : `${index}`;
+  dateDefaults.push({
+    label: twoDigitDate,
+    value: twoDigitDate
+  });
+}
+
+const Settings = props => {
+  props = props.parentProps;
+  const {
+    attributes,
+    setAttributes
+  } = props;
+  const {
+    dateRequired,
+    additonalVal,
+    minYear,
+    minMonth,
+    minDay,
+    maxYear,
+    maxMonth,
+    maxDay
+  } = attributes;
+  let validation_min_value = '';
+  let validation_max_value = '';
+
+  if (minYear && minMonth && minDay) {
+    validation_min_value = minYear + '-' + minMonth + '-' + minDay;
+  }
+
+  if (maxYear && maxMonth && maxDay) {
+    validation_max_value = maxYear + '-' + maxMonth + '-' + maxDay;
+  }
+
+  let invalidDateErrorMsg = '';
+  const start = Date.parse(validation_min_value);
+  const end = Date.parse(validation_max_value);
+
+  if (start > end) {
+    invalidDateErrorMsg = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+      className: "uagb-forms-date-invalidate"
+    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Invalid date range selected', 'ultimate-addons-for-gutenberg'));
+  }
+
+  const dateInspectorControls = () => {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["PanelBody"], {
+      initialOpen: true
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["ToggleControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Required', 'ultimate-addons-for-gutenberg'),
+      checked: dateRequired,
+      onChange: () => setAttributes({
+        dateRequired: !dateRequired
+      })
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["ToggleControl"], {
+      label: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Additional Validation', 'ultimate-addons-for-gutenberg'),
+      checked: additonalVal,
+      onChange: () => setAttributes({
+        additonalVal: !additonalVal
+      }),
+      help: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('Helps to set range of calender', 'ultimate-addons-for-gutenberg')
+    }), additonalVal && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('From', 'ultimate-addons-for-gutenberg'), " :"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["SelectControl"], {
+      className: 'minDate',
+      label: "Year",
+      value: minYear,
+      options: YearDefaults,
+      onChange: newMinYear => setAttributes({
+        newMinYear
+      })
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["SelectControl"], {
+      className: 'minDate',
+      label: "Month",
+      value: minMonth,
+      options: MonthsDefaults,
+      onChange: newMinMonth => setAttributes({
+        newMinMonth
+      })
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["SelectControl"], {
+      className: 'minDate',
+      label: "Date",
+      value: minDay,
+      options: dateDefaults,
+      onChange: newMinDay => setAttributes({
+        newMinDay
+      })
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, ' ', Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__["__"])('To', 'ultimate-addons-for-gutenberg'), " :"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["SelectControl"], {
+      className: 'maxDate',
+      label: "Year",
+      value: maxYear,
+      options: YearDefaults,
+      onChange: newMaxYear => setAttributes({
+        newMaxYear
+      })
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["SelectControl"], {
+      className: 'maxDate',
+      label: "Month",
+      value: maxMonth,
+      options: MonthsDefaults,
+      onChange: newMaxMonth => setAttributes({
+        newMaxMonth
+      })
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__["SelectControl"], {
+      className: 'maxDate',
+      label: "Date",
+      value: maxDay,
+      options: dateDefaults,
+      onChange: newMaxDay => setAttributes({
+        newMaxDay
+      })
+    }), invalidDateErrorMsg));
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["InspectorControls"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_inspector_tabs_InspectorTabs_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    tabs: ['general', 'advance']
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_inspector_tabs_InspectorTab_js__WEBPACK_IMPORTED_MODULE_4__["default"], _Components_inspector_tabs_InspectorTab_js__WEBPACK_IMPORTED_MODULE_4__["UAGTabs"].general, dateInspectorControls()), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_Components_inspector_tabs_InspectorTab_js__WEBPACK_IMPORTED_MODULE_4__["default"], _Components_inspector_tabs_InspectorTab_js__WEBPACK_IMPORTED_MODULE_4__["UAGTabs"].advance))));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.memo(Settings));
+
+/***/ })
+
+}]);
+//# sourceMappingURL=date-settings.js.map

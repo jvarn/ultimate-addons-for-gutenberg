@@ -1,1 +1,96 @@
-(window.webpackJsonp_ultimate_addons_for_gutenberg=window.webpackJsonp_ultimate_addons_for_gutenberg||[]).push([[78],{433:function(e,a,t){"use strict";t.r(a);var s=t(4),o=t.n(s),n=t(1),c=t(11),l=t(275);const i=Object(n.lazy)(()=>Promise.all([t.e(112),t.e(78)]).then(t.t.bind(null,449,7)));a.default=function(e){const{attributes:a,className:t,latestPosts:s,block_id:r,deviceType:m}=e,{columns:u,tcolumns:b,mcolumns:p,imgPosition:g,postsToShow:d,paginationEventType:_,buttonText:E,paginationType:N,layoutConfig:R}=a,f=s.length>d?s.slice(0,d):s;return React.createElement("div",{className:o()(t,"uagb-post-grid","uagb-post__arrow-outside","uagb-post__image-position-"+g,"uagb-editor-preview-mode-"+m.toLowerCase(),"uagb-block-"+r),"data-blog-id":r},React.createElement(n.Suspense,{fallback:Object(c.a)()},React.createElement(i,{className:o()("is-masonry","uagb-post__columns-"+u,"uagb-post__columns-tablet-"+b,"uagb-post__columns-mobile-"+p,"uagb-post__items")},React.createElement(l.b,{parentName:"uagb/post-masonry",parentClassName:"uagb-block-grid"},f.map((a,t)=>React.createElement("article",{key:t},React.createElement("div",{key:t,className:"uagb-post__inner-wrap"},Object(l.e)("uagb/post-masonry",a,R,e.attributes,e.categoriesList))))))),(()=>{if("infinite"===N){if("scroll"===_)return React.createElement("div",{className:"uagb-post-inf-loader"},React.createElement("div",{className:"uagb-post-loader-1"}),React.createElement("div",{className:"uagb-post-loader-2"}),React.createElement("div",{className:"uagb-post-loader-3"}));if("button"===_)return React.createElement("div",{className:"uagb-post__load-more-wrap"},React.createElement("span",{className:"uagb-post-pagination-button"},React.createElement("a",{className:"uagb-post__load-more"},E)))}})())}}}]);
+(window["webpackJsonp_ultimate_addons_for_gutenberg"] = window["webpackJsonp_ultimate_addons_for_gutenberg"] || []).push([["chunks/post-masonry/react-masonry-component"],{
+
+/***/ "./src/blocks/post/post-masonry/blog.js":
+/*!**********************************************!*\
+  !*** ./src/blocks/post/post-masonry/blog.js ***!
+  \**********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Controls_lazy_loader__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @Controls/lazy-loader */ "./blocks-config/uagb-controls/lazy-loader.js");
+/* harmony import */ var _function__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! .././function */ "./src/blocks/post/function.js");
+
+
+
+const Masonry = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_1__["lazy"])(() => Promise.all(/*! import() | chunks/post-masonry/react-masonry-component */[__webpack_require__.e("vendors~chunks/post-masonry/react-masonry-component"), __webpack_require__.e("chunks/post-masonry/react-masonry-component")]).then(__webpack_require__.t.bind(null, /*! react-masonry-component */ "./node_modules/react-masonry-component/lib/index.js", 7)));
+
+
+function Blog(props) {
+  const {
+    attributes,
+    className,
+    latestPosts,
+    block_id,
+    deviceType
+  } = props;
+  const {
+    columns,
+    tcolumns,
+    mcolumns,
+    imgPosition,
+    postsToShow,
+    paginationEventType,
+    buttonText,
+    paginationType,
+    layoutConfig
+  } = attributes; // Removing posts from display should be instant.
+
+  const displayPosts = latestPosts.length > postsToShow ? latestPosts.slice(0, postsToShow) : latestPosts;
+
+  const paginationRender = () => {
+    if ('infinite' === paginationType) {
+      if ('scroll' === paginationEventType) {
+        return /*#__PURE__*/React.createElement("div", {
+          className: "uagb-post-inf-loader"
+        }, /*#__PURE__*/React.createElement("div", {
+          className: "uagb-post-loader-1"
+        }), /*#__PURE__*/React.createElement("div", {
+          className: "uagb-post-loader-2"
+        }), /*#__PURE__*/React.createElement("div", {
+          className: "uagb-post-loader-3"
+        }));
+      }
+
+      if ('button' === paginationEventType) {
+        return /*#__PURE__*/React.createElement("div", {
+          className: "uagb-post__load-more-wrap"
+        }, /*#__PURE__*/React.createElement("span", {
+          className: "uagb-post-pagination-button"
+        }, /*#__PURE__*/React.createElement("a", {
+          // eslint-disable-line jsx-a11y/anchor-is-valid
+          className: "uagb-post__load-more"
+        }, buttonText)));
+      }
+    }
+  };
+
+  return /*#__PURE__*/React.createElement("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, 'uagb-post-grid', 'uagb-post__arrow-outside', `uagb-post__image-position-${imgPosition}`, `uagb-editor-preview-mode-${deviceType.toLowerCase()}`, `uagb-block-${block_id}`),
+    "data-blog-id": block_id
+  }, /*#__PURE__*/React.createElement(react__WEBPACK_IMPORTED_MODULE_1__["Suspense"], {
+    fallback: Object(_Controls_lazy_loader__WEBPACK_IMPORTED_MODULE_2__["default"])()
+  }, /*#__PURE__*/React.createElement(Masonry, {
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('is-masonry', `uagb-post__columns-${columns}`, `uagb-post__columns-tablet-${tcolumns}`, `uagb-post__columns-mobile-${mcolumns}`, 'uagb-post__items')
+  }, /*#__PURE__*/React.createElement(_function__WEBPACK_IMPORTED_MODULE_3__["InnerBlockLayoutContextProvider"], {
+    parentName: "uagb/post-masonry",
+    parentClassName: "uagb-block-grid"
+  }, displayPosts.map((post, i) => /*#__PURE__*/React.createElement("article", {
+    key: i
+  }, /*#__PURE__*/React.createElement("div", {
+    key: i,
+    className: "uagb-post__inner-wrap"
+  }, Object(_function__WEBPACK_IMPORTED_MODULE_3__["renderPostLayout"])('uagb/post-masonry', post, layoutConfig, props.attributes, props.categoriesList))))))), paginationRender());
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (Blog);
+
+/***/ })
+
+}]);
+//# sourceMappingURL=react-masonry-component.js.map

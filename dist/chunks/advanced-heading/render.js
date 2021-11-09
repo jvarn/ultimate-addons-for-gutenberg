@@ -1,1 +1,75 @@
-(window.webpackJsonp_ultimate_addons_for_gutenberg=window.webpackJsonp_ultimate_addons_for_gutenberg||[]).push([[3],{517:function(e,a,t){"use strict";t.r(a);var n=t(4),r=t.n(n),s=t(5),i=t(2),o=t(1),c=t.n(o);const l=e=>{e=e.parentProps;const{attributes:{block_id:a,headingTitle:t,headingDesc:n,headingTag:o,seperatorStyle:l},setAttributes:d,className:g,deviceType:u}=e,m=c.a.createElement(s.RichText,{tagName:o,placeholder:Object(i.__)("Write a Heading","ultimate-addons-for-gutenberg"),value:t,className:"uagb-heading-text",multiline:!1,onChange:e=>{d({headingTitle:e})}}),b="none"!==l&&c.a.createElement("div",{className:"uagb-separator-wrap"},c.a.createElement("div",{className:"uagb-separator"})),p=c.a.createElement(s.RichText,{tagName:"p",placeholder:Object(i.__)("Write a Description","ultimate-addons-for-gutenberg"),value:n,className:"uagb-desc-text",onChange:e=>d({headingDesc:e})});return c.a.createElement("div",{className:r()(g,"uagb-editor-preview-mode-"+u.toLowerCase(),"uagb-block-"+a)},m,b,p)};a.default=c.a.memo(l)}}]);
+(window["webpackJsonp_ultimate_addons_for_gutenberg"] = window["webpackJsonp_ultimate_addons_for_gutenberg"] || []).push([["chunks/advanced-heading/render"],{
+
+/***/ "./src/blocks/advanced-heading/render.js":
+/*!***********************************************!*\
+  !*** ./src/blocks/advanced-heading/render.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+
+const Render = props => {
+  props = props.parentProps;
+  const {
+    attributes: {
+      block_id,
+      headingTitle,
+      headingDesc,
+      headingTag,
+      seperatorStyle
+    },
+    setAttributes,
+    className,
+    deviceType
+  } = props;
+  const headingText = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__["RichText"], {
+    tagName: headingTag,
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Write a Heading', 'ultimate-addons-for-gutenberg'),
+    value: headingTitle,
+    className: "uagb-heading-text",
+    multiline: false,
+    onChange: value => {
+      setAttributes({
+        headingTitle: value
+      });
+    }
+  });
+  const separator = seperatorStyle !== 'none' && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: "uagb-separator-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: "uagb-separator"
+  }));
+  const descText = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__["RichText"], {
+    tagName: "p",
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Write a Description', 'ultimate-addons-for-gutenberg'),
+    value: headingDesc,
+    className: "uagb-desc-text",
+    onChange: value => setAttributes({
+      headingDesc: value
+    })
+  });
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, `uagb-editor-preview-mode-${deviceType.toLowerCase()}`, `uagb-block-${block_id}`)
+  }, headingText, separator, descText);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.memo(Render));
+
+/***/ })
+
+}]);
+//# sourceMappingURL=render.js.map

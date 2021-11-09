@@ -161,6 +161,9 @@ const attributes = {
 	separatorHoverColor: {
 		type: 'string',
 	},
+	blockStyles: {
+		type: 'array',
+	},
 };
 
 export default attributes;

@@ -1,1 +1,560 @@
-(window.webpackJsonp_ultimate_addons_for_gutenberg=window.webpackJsonp_ultimate_addons_for_gutenberg||[]).push([[73],{275:function(e,t,a){"use strict";a.d(t,"b",(function(){return b})),a.d(t,"a",(function(){return p})),a.d(t,"e",(function(){return g})),a.d(t,"c",(function(){return h})),a.d(t,"d",(function(){return f}));var o=a(108),n=a(111),r=a(109),s=a(106),i=a(110),l=a(3);function c(){return(c=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var a=arguments[t];for(var o in a)Object.prototype.hasOwnProperty.call(a,o)&&(e[o]=a[o])}return e}).apply(this,arguments)}const u=Object(l.createContext)({parentName:"",parentClassName:"",isLoading:!1}),b=({parentName:e="",parentClassName:t="",children:a})=>{const o={parentName:e,parentClassName:t};return React.createElement(u.Provider,{value:o},a)},p=[["uagb/post-image"],["uagb/post-title"],["uagb/post-meta"],["uagb/post-excerpt"],["uagb/post-button"]],g=(e,t,a,o,n)=>{if(!a)return;const r=h(e);let s=[];return a.map(([a,i={}],u)=>{i.children&&i.children.length>0&&(s=g(e,t,i.children,o,n));const b=r[a];return b?React.createElement(l.Suspense,{key:u,fallback:React.createElement("div",{className:"wc-block-placeholder"})},React.createElement(b,c({},i,{post:t,attributes:o,categoriesList:n}))):null})},d={};function m(e){e.context||(e.context="any"),w(e,"context","string"),w(e,"blockName","string"),_(e,"component");const{context:t,blockName:a,component:o}=e;d[t]||(d[t]={}),d[t][a]=o}const _=(e,t)=>{if(e[t]){if("function"==typeof e[t])return;if(e[t].$$typeof&&e[t].$$typeof===Symbol.for("react.lazy"))return}throw new Error(`Incorrect value for the ${t} argument when registering a block component. Component must be a valid React Element or Lazy callback.`)},w=(e,t,a)=>{const o=typeof e[t];if(o!==a)throw new Error(`Incorrect value for the ${t} argument when registering a block component. It was a ${o}, but must be a ${a}.`)};m({blockName:"uagb/post-title",component:o.a}),m({blockName:"uagb/post-image",component:r.a}),m({blockName:"uagb/post-meta",component:n.a}),m({blockName:"uagb/post-excerpt",component:s.a}),m({blockName:"uagb/post-button",component:i.a});const h=e=>{return{..."object"==typeof d[t=e]&&Object.keys(d[t]).length>0?d[t]:{},...d.any};var t},f=e=>e&&0!==e.length?e.map(e=>[e.name,{...e.attributes,post:void 0,children:e.innerBlocks.length>0?f(e.innerBlocks):[]}]):[]},291:function(e,t,a){"use strict";var o,n=a(17),r=a.n(n),s=a(292),i=0,l={injectType:"lazySingletonStyleTag",attributes:{id:"uagb-editor-styles"},insert:"head",singleton:!0},c={};c.locals=s.a.locals||{},c.use=function(){return i++||(o=r()(s.a,l)),c},c.unuse=function(){i>0&&!--i&&(o(),o=null)},t.a=c},292:function(e,t,a){"use strict";var o=a(18),n=a.n(o)()((function(e){return e[1]}));n.push([e.i,"/**\r\n * Editor styles for the admin\r\n */\n.uagb-post-grid h2 a {\n  text-decoration: none; }\n\n.uagb-post-grid a {\n  cursor: default;\n  pointer-events: none; }\n\n.uagb-post-grid .uagb-post__load-more-wrap {\n  width: 100%; }\n  .uagb-post-grid .uagb-post__load-more-wrap .uagb-post-pagination-button {\n    cursor: pointer;\n    pointer-events: visible; }\n  .uagb-post-grid .uagb-post__load-more-wrap a {\n    color: inherit; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-1 article {\n  width: 100%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-2 article {\n  width: 50%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-3 article {\n  width: 33.2%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-4 article {\n  width: 25%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-5 article {\n  width: 20%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-6 article {\n  width: 16.66%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-7 article {\n  width: 14.28%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-8 article {\n  width: 12.5%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-1 article {\n  width: 100%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-2 article {\n  width: 50%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-3 article {\n  width: 33.2%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-4 article {\n  width: 25%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-5 article {\n  width: 20%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-6 article {\n  width: 16.66%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-tablet-7 article {\n  width: 14.28%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-tablet-8 article {\n  width: 12.5%; }\n\n.block-editor-page #wpwrap .edit-post-visual-editor .slick-dots button {\n  color: transparent; }\n\n.block-editor-page #wpwrap .edit-post-visual-editor .uagb-post__image-position-background .uagb-post__image img {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: auto;\n  height: auto;\n  max-width: none;\n  min-width: 100%;\n  min-height: 100%;\n  transform: translate(-50%, -50%);\n  -webkit-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%); }\n",""]),t.a=n},619:function(e,t,a){"use strict";a.r(t);var o=a(275),n=a(1),r=a.n(n),s=a(4),i=a.n(s),l=a(8),c=a(11);function u(){return(u=Object.assign||function(e){for(var t=1;t<arguments.length;t++){var a=arguments[t];for(var o in a)Object.prototype.hasOwnProperty.call(a,o)&&(e[o]=a[o])}return e}).apply(this,arguments)}const b=Object(n.lazy)(()=>a.e(1).then(a.t.bind(null,577,7)));function p(e){const{attributes:t,className:a,latestPosts:s,block_id:p,deviceType:g}=e,{columns:d,tcolumns:m,mcolumns:_,imgPosition:w,postsToShow:h,autoplay:f,pauseOnHover:v,transitionSpeed:k,infiniteLoop:y,arrowSize:E,arrowBorderSize:N,arrowBorderRadius:O,arrowColor:C,arrowDots:j,equalHeight:S,layoutConfig:x}=t,B=s.length>h?s.slice(0,h):s;function T(){return r.a.createElement("button",{type:"button","data-role":"none",className:"slick-next slick-arrow","aria-label":"Next",tabIndex:"0",style:{borderColor:C,borderRadius:O,borderWidth:N}},l.a.carousel_right)}function P(){return r.a.createElement("button",{type:"button","data-role":"none",className:"slick-prev slick-arrow","aria-label":"Previous",tabIndex:"0",style:{borderColor:C,borderRadius:O,borderWidth:N}},l.a.carousel_left)}const L=S?"uagb-post__carousel_equal-height":"",I={slidesToShow:d,slidesToScroll:1,autoplaySpeed:2e3,autoplay:f,infinite:y,pauseOnHover:v,speed:k,arrows:"arrows"===j||"arrows_dots"===j,dots:"dots"===j||"arrows_dots"===j,rtl:!1,afterChange:()=>{S&&uagb_carousel_height(p)},nextArrow:r.a.createElement(T,{arrowSize:E}),prevArrow:r.a.createElement(P,{arrowSize:E}),responsive:[{breakpoint:1024,settings:{slidesToShow:m,slidesToScroll:1}},{breakpoint:767,settings:{slidesToShow:_,slidesToScroll:1}}]},R=B.map((t,a)=>r.a.createElement("article",{key:a},r.a.createElement("div",{className:"uagb-post__inner-wrap"},Object(o.e)("uagb/post-carousel",t,x,e.attributes,e.categoriesList))));return d>=B.length?r.a.createElement("div",{className:i()(a,"uagb-post-grid","uagb-post__arrow-outside","uagb-post__image-position-"+w,""+L,"uagb-editor-preview-mode-"+g.toLowerCase(),"uagb-block-"+p),"data-blog-id":p},r.a.createElement("div",{className:i()("is-carousel","uagb-post__columns-"+d,"uagb-post__columns-tablet-"+m,"uagb-post__columns-mobile-"+_,"uagb-post__items")},r.a.createElement(o.b,{parentName:"uagb/post-carousel",parentClassName:"uagb-block-grid"},R))):r.a.createElement("div",{className:i()(a,"uagb-post-grid","uagb-post__arrow-outside","uagb-slick-carousel","uagb-post__image-position-"+w,""+L,"uagb-block-"+p),"data-blog-id":p,style:"dots"===j?{padding:"0 0 35px 0"}:{}},r.a.createElement(n.Suspense,{fallback:Object(c.a)()},r.a.createElement(b,u({className:i()("is-carousel","uagb-post__columns-"+d,"uagb-post__items")},I),R)))}var g=r.a.memo(p),d=a(2),m=a(7),_=a(6),w=a(5),h=a(291);const f=e=>{Object(n.useLayoutEffect)(()=>(h.a.use(),()=>{h.a.unuse()}),[]);const{state:t,setState:a,togglePreview:s}=e;e=e.parentProps;const{attributes:i,categoriesList:l,latestPosts:c,deviceType:u}=e,b=r.a.createElement(_.Disabled,null,r.a.createElement(g,{attributes:i,className:e.className,latestPosts:c,block_id:e.clientId.substr(0,8),categoriesList:l,deviceType:u}));return r.a.createElement(r.a.Fragment,null,t.isEditing?(()=>{const n={template:e.attributes.layoutConfig,templateLock:!1,allowedBlocks:Object.keys(Object(o.c)("uagb/post-grid"))};return 0!==e.attributes.layoutConfig.length&&(n.renderAppender=!1),r.a.createElement(_.Placeholder,{label:"Post Carousel Layout"},r.a.createElement("div",{className:"uagb-block-all-post-grid-item-template"},r.a.createElement(_.Tip,null,Object(d.__)("Edit the blocks inside the preview below to change the content displayed for each post within the post carousel.")),r.a.createElement(o.b,{parentName:"uagb/post-grid",parentClassName:"uagb-block-grid"},r.a.createElement("article",null,r.a.createElement("div",{className:"uagb-post__inner-wrap uagb-post__edit-mode"},r.a.createElement("div",{className:"uagb-post__text"},r.a.createElement(w.InnerBlocks,n))))),r.a.createElement("div",{className:"uagb-block-all-post__actions"},r.a.createElement(_.Button,{className:"uagb-block-all-post__done-button",isPrimary:!0,onClick:()=>{const{block:t,setAttributes:n}=e;n({layoutConfig:Object(o.d)(t)}),a({innerBlocks:t}),s()}},Object(d.__)("Done")),r.a.createElement(_.Button,{className:"uagb-block-all-post__cancel-button",isTertiary:!0,onClick:()=>{const{replaceInnerBlocks:a}=e,{innerBlocks:o}=t;a(e.clientId,o),s()}},Object(d.__)("Cancel")),r.a.createElement(_.Button,{className:"uagb-block-all-post__reset-button",onClick:()=>{const{block:t,replaceInnerBlocks:n}=e,r=[];o.a.map(([e,t])=>(r.push(Object(m.createBlock)(e,t)),!0)),n(e.clientId,r),a({innerBlocks:t})}},Object(d.__)("Reset Layout")))))})():b)};t.default=r.a.memo(f)}}]);
+(window["webpackJsonp_ultimate_addons_for_gutenberg"] = window["webpackJsonp_ultimate_addons_for_gutenberg"] || []).push([["chunks/post-carousel/render"],{
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/blocks/post/editor.lazy.scss":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/blocks/post/editor.lazy.scss ***!
+  \*************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, "/**\r\n * Editor styles for the admin\r\n */\n.uagb-post-grid h2 a {\n  text-decoration: none; }\n\n.uagb-post-grid a {\n  cursor: default;\n  pointer-events: none; }\n\n.uagb-post-grid .uagb-post__load-more-wrap {\n  width: 100%; }\n  .uagb-post-grid .uagb-post__load-more-wrap .uagb-post-pagination-button {\n    cursor: pointer;\n    pointer-events: visible; }\n  .uagb-post-grid .uagb-post__load-more-wrap a {\n    color: inherit; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-1 article {\n  width: 100%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-2 article {\n  width: 50%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-3 article {\n  width: 33.2%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-4 article {\n  width: 25%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-5 article {\n  width: 20%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-6 article {\n  width: 16.66%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-7 article {\n  width: 14.28%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-8 article {\n  width: 12.5%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-1 article {\n  width: 100%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-2 article {\n  width: 50%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-3 article {\n  width: 33.2%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-4 article {\n  width: 25%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-5 article {\n  width: 20%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-6 article {\n  width: 16.66%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-tablet-7 article {\n  width: 14.28%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-tablet-8 article {\n  width: 12.5%; }\n\n.block-editor-page #wpwrap .edit-post-visual-editor .slick-dots button {\n  color: transparent; }\n\n.block-editor-page #wpwrap .edit-post-visual-editor .uagb-post__image-position-background .uagb-post__image img {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: auto;\n  height: auto;\n  max-width: none;\n  min-width: 100%;\n  min-height: 100%;\n  transform: translate(-50%, -50%);\n  -webkit-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%); }\n", "",{"version":3,"sources":["webpack://./src/blocks/post/editor.lazy.scss"],"names":[],"mappings":"AAAA;;EAEE;AACF;EACE,qBAAqB,EAAE;;AAEzB;EACE,eAAe;EACf,oBAAoB,EAAE;;AAExB;EACE,WAAW,EAAE;EACb;IACE,eAAe;IACf,uBAAuB,EAAE;EAC3B;IACE,cAAc,EAAE;;AAEpB;EACE,WAAW,EAAE;;AAEf;EACE,UAAU,EAAE;;AAEd;EACE,YAAY,EAAE;;AAEhB;EACE,UAAU,EAAE;;AAEd;EACE,UAAU,EAAE;;AAEd;EACE,aAAa,EAAE;;AAEjB;EACE,aAAa,EAAE;;AAEjB;EACE,YAAY,EAAE;;AAEhB;EACE,WAAW,EAAE;;AAEf;EACE,UAAU,EAAE;;AAEd;EACE,YAAY,EAAE;;AAEhB;EACE,UAAU,EAAE;;AAEd;EACE,UAAU,EAAE;;AAEd;EACE,aAAa,EAAE;;AAEjB;EACE,aAAa,EAAE;;AAEjB;EACE,YAAY,EAAE;;AAEhB;EACE,kBAAkB,EAAE;;AAEtB;EACE,kBAAkB;EAClB,QAAQ;EACR,SAAS;EACT,WAAW;EACX,YAAY;EACZ,eAAe;EACf,eAAe;EACf,gBAAgB;EAChB,gCAAgC;EAChC,wCAAwC;EACxC,oCAAoC,EAAE","sourcesContent":["/**\r\n * Editor styles for the admin\r\n */\n.uagb-post-grid h2 a {\n  text-decoration: none; }\n\n.uagb-post-grid a {\n  cursor: default;\n  pointer-events: none; }\n\n.uagb-post-grid .uagb-post__load-more-wrap {\n  width: 100%; }\n  .uagb-post-grid .uagb-post__load-more-wrap .uagb-post-pagination-button {\n    cursor: pointer;\n    pointer-events: visible; }\n  .uagb-post-grid .uagb-post__load-more-wrap a {\n    color: inherit; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-1 article {\n  width: 100%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-2 article {\n  width: 50%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-3 article {\n  width: 33.2%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-4 article {\n  width: 25%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-5 article {\n  width: 20%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-6 article {\n  width: 16.66%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-7 article {\n  width: 14.28%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-tablet .uagb-post__columns-tablet-8 article {\n  width: 12.5%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-1 article {\n  width: 100%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-2 article {\n  width: 50%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-3 article {\n  width: 33.2%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-4 article {\n  width: 25%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-5 article {\n  width: 20%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-mobile-6 article {\n  width: 16.66%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-tablet-7 article {\n  width: 14.28%; }\n\n.uagb-post-grid.uagb-editor-preview-mode-mobile .uagb-post__columns-tablet-8 article {\n  width: 12.5%; }\n\n.block-editor-page #wpwrap .edit-post-visual-editor .slick-dots button {\n  color: transparent; }\n\n.block-editor-page #wpwrap .edit-post-visual-editor .uagb-post__image-position-background .uagb-post__image img {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: auto;\n  height: auto;\n  max-width: none;\n  min-width: 100%;\n  min-height: 100%;\n  transform: translate(-50%, -50%);\n  -webkit-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%); }\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./src/blocks/post/editor.lazy.scss":
+/*!******************************************!*\
+  !*** ./src/blocks/post/editor.lazy.scss ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_lib_loader_js_editor_lazy_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/lib/loader.js!./editor.lazy.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/blocks/post/editor.lazy.scss");
+
+            
+
+var refs = 0;
+var update;
+var options = {"injectType":"lazySingletonStyleTag","attributes":{"id":"uagb-editor-styles"}};
+
+options.insert = "head";
+options.singleton = true;
+
+var exported = {};
+
+exported.locals = _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_lib_loader_js_editor_lazy_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {};
+exported.use = function() {
+  if (!(refs++)) {
+    update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_lib_loader_js_editor_lazy_scss__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+  }
+
+  return exported;
+};
+exported.unuse = function() {
+  if (refs > 0 && !--refs) {
+    update();
+    update = null;
+  }
+};
+
+
+
+;
+       /* harmony default export */ __webpack_exports__["default"] = (exported);
+
+
+/***/ }),
+
+/***/ "./src/blocks/post/function.js":
+/*!*************************************!*\
+  !*** ./src/blocks/post/function.js ***!
+  \*************************************/
+/*! exports provided: useInnerBlockLayoutContext, InnerBlockLayoutContextProvider, DEFAULT_POST_LIST_LAYOUT, renderPostLayout, registeredBlockComponents, registerBlockComponent, getBlockMap, getRegisteredBlockComponents, getPostLayoutConfig */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "useInnerBlockLayoutContext", function() { return useInnerBlockLayoutContext; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "InnerBlockLayoutContextProvider", function() { return InnerBlockLayoutContextProvider; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DEFAULT_POST_LIST_LAYOUT", function() { return DEFAULT_POST_LIST_LAYOUT; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "renderPostLayout", function() { return renderPostLayout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registeredBlockComponents", function() { return registeredBlockComponents; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "registerBlockComponent", function() { return registerBlockComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getBlockMap", function() { return getBlockMap; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getRegisteredBlockComponents", function() { return getRegisteredBlockComponents; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getPostLayoutConfig", function() { return getPostLayoutConfig; });
+/* harmony import */ var _post_title_edit__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./post-title/edit */ "./src/blocks/post/post-title/edit.js");
+/* harmony import */ var _post_meta_edit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./post-meta/edit */ "./src/blocks/post/post-meta/edit.js");
+/* harmony import */ var _post_image_edit__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./post-image/edit */ "./src/blocks/post/post-image/edit.js");
+/* harmony import */ var _post_excerpt_edit__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./post-excerpt/edit */ "./src/blocks/post/post-excerpt/edit.js");
+/* harmony import */ var _post_button_edit__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./post-button/edit */ "./src/blocks/post/post-button/edit.js");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__);
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+/**
+ * External dependencies
+ */
+
+
+
+
+
+
+const InnerBlockLayoutContext = Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["createContext"])({
+  parentName: '',
+  parentClassName: '',
+  isLoading: false
+});
+const useInnerBlockLayoutContext = () => Object(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["useContext"])(InnerBlockLayoutContext);
+const InnerBlockLayoutContextProvider = ({
+  parentName = '',
+  parentClassName = '',
+  children
+}) => {
+  const contextValue = {
+    parentName,
+    parentClassName
+  };
+  return /*#__PURE__*/React.createElement(InnerBlockLayoutContext.Provider, {
+    value: contextValue
+  }, children);
+};
+const DEFAULT_POST_LIST_LAYOUT = [['uagb/post-image'], ['uagb/post-title'], ['uagb/post-meta'], ['uagb/post-excerpt'], ['uagb/post-button']];
+const renderPostLayout = (blockName, post, layoutConfig, attributes, categoriesList) => {
+  if (!layoutConfig) {
+    return;
+  }
+
+  const blockMap = getBlockMap(blockName);
+  let children = []; // eslint-disable-line no-unused-vars
+
+  return layoutConfig.map(([name, props = {}], key) => {
+    if (!!props.children && props.children.length > 0) {
+      children = renderPostLayout(blockName, post, props.children, attributes, categoriesList);
+    }
+
+    const LayoutComponent = blockMap[name];
+
+    if (!LayoutComponent) {
+      return null;
+    }
+
+    return /*#__PURE__*/React.createElement(_wordpress_element__WEBPACK_IMPORTED_MODULE_5__["Suspense"], {
+      key: key,
+      fallback: /*#__PURE__*/React.createElement("div", {
+        className: "wc-block-placeholder"
+      })
+    }, /*#__PURE__*/React.createElement(LayoutComponent, _extends({}, props, {
+      post: post,
+      attributes: attributes,
+      categoriesList: categoriesList
+    })));
+  });
+};
+const registeredBlockComponents = {};
+
+function registerBlockComponent(options) {
+  if (!options.context) {
+    options.context = 'any';
+  }
+
+  assertOption(options, 'context', 'string');
+  assertOption(options, 'blockName', 'string');
+  assertBlockComponent(options, 'component');
+  const {
+    context,
+    blockName,
+    component
+  } = options;
+
+  if (!registeredBlockComponents[context]) {
+    registeredBlockComponents[context] = {};
+  }
+
+  registeredBlockComponents[context][blockName] = component;
+}
+
+const assertBlockComponent = (options, optionName) => {
+  if (options[optionName]) {
+    if (typeof options[optionName] === 'function') {
+      return;
+    }
+
+    if (options[optionName].$$typeof && options[optionName].$$typeof === Symbol.for('react.lazy')) {
+      return;
+    }
+  }
+
+  throw new Error(`Incorrect value for the ${optionName} argument when registering a block component. Component must be a valid React Element or Lazy callback.`);
+};
+
+const assertOption = (options, optionName, expectedType) => {
+  const actualType = typeof options[optionName];
+
+  if (actualType !== expectedType) {
+    throw new Error(`Incorrect value for the ${optionName} argument when registering a block component. It was a ${actualType}, but must be a ${expectedType}.`);
+  }
+};
+
+registerBlockComponent({
+  blockName: 'uagb/post-title',
+  component: _post_title_edit__WEBPACK_IMPORTED_MODULE_0__["PostTitle"]
+});
+registerBlockComponent({
+  blockName: 'uagb/post-image',
+  component: _post_image_edit__WEBPACK_IMPORTED_MODULE_2__["PostImage"]
+});
+registerBlockComponent({
+  blockName: 'uagb/post-meta',
+  component: _post_meta_edit__WEBPACK_IMPORTED_MODULE_1__["PostMeta"]
+});
+registerBlockComponent({
+  blockName: 'uagb/post-excerpt',
+  component: _post_excerpt_edit__WEBPACK_IMPORTED_MODULE_3__["PostExcerpt"]
+});
+registerBlockComponent({
+  blockName: 'uagb/post-button',
+  component: _post_button_edit__WEBPACK_IMPORTED_MODULE_4__["PostButton"]
+});
+const getBlockMap = blockName => getRegisteredBlockComponents(blockName);
+function getRegisteredBlockComponents(context) {
+  const parentInnerBlocks = typeof registeredBlockComponents[context] === 'object' && Object.keys(registeredBlockComponents[context]).length > 0 ? registeredBlockComponents[context] : {};
+  return { ...parentInnerBlocks,
+    ...registeredBlockComponents.any
+  };
+}
+/**
+ * Converts innerblocks to a list of layout configs.
+ *
+ * @param {Object[]} innerBlocks Inner block components.
+ */
+
+const getPostLayoutConfig = innerBlocks => {
+  if (!innerBlocks || innerBlocks.length === 0) {
+    return [];
+  }
+
+  return innerBlocks.map(block => {
+    return [block.name, { ...block.attributes,
+      post: undefined,
+      children: block.innerBlocks.length > 0 ? getPostLayoutConfig(block.innerBlocks) : []
+    }];
+  });
+};
+
+/***/ }),
+
+/***/ "./src/blocks/post/post-carousel/blog.js":
+/*!***********************************************!*\
+  !*** ./src/blocks/post/post-carousel/blog.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Controls_block_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @Controls/block-icons */ "./blocks-config/uagb-controls/block-icons.js");
+/* harmony import */ var _function__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! .././function */ "./src/blocks/post/function.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _Controls_lazy_loader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @Controls/lazy-loader */ "./blocks-config/uagb-controls/lazy-loader.js");
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+
+
+
+
+
+const Slider = /*#__PURE__*/Object(react__WEBPACK_IMPORTED_MODULE_3__["lazy"])(() => __webpack_require__.e(/*! import() | chunks/post-carousel/react-slick */ "vendors~chunks/testimonial/react-slick").then(__webpack_require__.t.bind(null, /*! react-slick */ "./node_modules/react-slick/lib/index.js", 7)));
+
+function Blog(props) {
+  const {
+    attributes,
+    className,
+    latestPosts,
+    block_id,
+    deviceType
+  } = props;
+  const {
+    columns,
+    tcolumns,
+    mcolumns,
+    imgPosition,
+    postsToShow,
+    autoplay,
+    pauseOnHover,
+    transitionSpeed,
+    infiniteLoop,
+    arrowSize,
+    arrowBorderSize,
+    arrowBorderRadius,
+    arrowColor,
+    arrowDots,
+    equalHeight,
+    layoutConfig
+  } = attributes; // Removing posts from display should be instant.
+
+  const displayPosts = latestPosts.length > postsToShow ? latestPosts.slice(0, postsToShow) : latestPosts;
+
+  function NextArrow() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("button", {
+      type: "button",
+      "data-role": "none",
+      className: "slick-next slick-arrow",
+      "aria-label": "Next",
+      tabIndex: "0",
+      style: {
+        borderColor: arrowColor,
+        borderRadius: arrowBorderRadius,
+        borderWidth: arrowBorderSize
+      }
+    }, _Controls_block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].carousel_right);
+  }
+
+  function PrevArrow() {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("button", {
+      type: "button",
+      "data-role": "none",
+      className: "slick-prev slick-arrow",
+      "aria-label": "Previous",
+      tabIndex: "0",
+      style: {
+        borderColor: arrowColor,
+        borderRadius: arrowBorderRadius,
+        borderWidth: arrowBorderSize
+      }
+    }, _Controls_block_icons__WEBPACK_IMPORTED_MODULE_1__["default"].carousel_left);
+  }
+
+  const dots = 'dots' === arrowDots || 'arrows_dots' === arrowDots ? true : false;
+  const arrows = 'arrows' === arrowDots || 'arrows_dots' === arrowDots ? true : false;
+  const equalHeightClass = equalHeight ? 'uagb-post__carousel_equal-height' : '';
+  const settings = {
+    slidesToShow: columns,
+    slidesToScroll: 1,
+    autoplaySpeed: 2000,
+    autoplay,
+    infinite: infiniteLoop,
+    pauseOnHover,
+    speed: transitionSpeed,
+    arrows,
+    dots,
+    rtl: false,
+    afterChange: () => {
+      if (equalHeight) {
+        uagb_carousel_height(block_id); // eslint-disable-line no-undef
+      }
+    },
+    nextArrow: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(NextArrow, {
+      arrowSize: arrowSize
+    }),
+    prevArrow: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(PrevArrow, {
+      arrowSize: arrowSize
+    }),
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: tcolumns,
+        slidesToScroll: 1
+      }
+    }, {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: mcolumns,
+        slidesToScroll: 1
+      }
+    }]
+  };
+  const all_posts = displayPosts.map((post, i) => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("article", {
+    key: i
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: "uagb-post__inner-wrap"
+  }, Object(_function__WEBPACK_IMPORTED_MODULE_2__["renderPostLayout"])('uagb/post-carousel', post, layoutConfig, props.attributes, props.categoriesList))));
+
+  if (columns >= displayPosts.length) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, 'uagb-post-grid', 'uagb-post__arrow-outside', `uagb-post__image-position-${imgPosition}`, `${equalHeightClass}`, `uagb-editor-preview-mode-${deviceType.toLowerCase()}`, `uagb-block-${block_id}`),
+      "data-blog-id": block_id
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('is-carousel', `uagb-post__columns-${columns}`, `uagb-post__columns-tablet-${tcolumns}`, `uagb-post__columns-mobile-${mcolumns}`, 'uagb-post__items')
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(_function__WEBPACK_IMPORTED_MODULE_2__["InnerBlockLayoutContextProvider"], {
+      parentName: "uagb/post-carousel",
+      parentClassName: "uagb-block-grid"
+    }, all_posts)));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, 'uagb-post-grid', 'uagb-post__arrow-outside', 'uagb-slick-carousel', `uagb-post__image-position-${imgPosition}`, `${equalHeightClass}`, `uagb-block-${block_id}`),
+    "data-blog-id": block_id,
+    style: 'dots' === arrowDots ? {
+      padding: '0 0 35px 0'
+    } : {}
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_3__["Suspense"], {
+    fallback: Object(_Controls_lazy_loader__WEBPACK_IMPORTED_MODULE_4__["default"])()
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Slider, _extends({
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('is-carousel', `uagb-post__columns-${columns}`, 'uagb-post__items')
+  }, settings), all_posts)));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_3___default.a.memo(Blog));
+
+/***/ }),
+
+/***/ "./src/blocks/post/post-carousel/render.js":
+/*!*************************************************!*\
+  !*** ./src/blocks/post/post-carousel/render.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _function__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../function */ "./src/blocks/post/function.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _blog__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./blog */ "./src/blocks/post/post-carousel/blog.js");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _editor_lazy_scss__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! .././editor.lazy.scss */ "./src/blocks/post/editor.lazy.scss");
+
+
+
+
+
+
+
+
+
+const Render = props => {
+  // Add and remove the CSS on the drop and remove of the component.
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useLayoutEffect"])(() => {
+    _editor_lazy_scss__WEBPACK_IMPORTED_MODULE_7__["default"].use();
+    return () => {
+      _editor_lazy_scss__WEBPACK_IMPORTED_MODULE_7__["default"].unuse();
+    };
+  }, []);
+  const {
+    state,
+    setState,
+    togglePreview
+  } = props;
+  props = props.parentProps;
+  const {
+    attributes,
+    categoriesList,
+    latestPosts,
+    deviceType
+  } = props;
+
+  const renderEditMode = () => {
+    const onDone = () => {
+      const {
+        block,
+        setAttributes
+      } = props;
+      setAttributes({
+        layoutConfig: Object(_function__WEBPACK_IMPORTED_MODULE_0__["getPostLayoutConfig"])(block)
+      });
+      setState({
+        innerBlocks: block
+      });
+      togglePreview();
+    };
+
+    const onCancel = () => {
+      const {
+        replaceInnerBlocks
+      } = props;
+      const {
+        innerBlocks
+      } = state;
+      replaceInnerBlocks(props.clientId, innerBlocks);
+      togglePreview();
+    };
+
+    const onReset = () => {
+      const {
+        block,
+        replaceInnerBlocks
+      } = props;
+      const newBlocks = [];
+      _function__WEBPACK_IMPORTED_MODULE_0__["DEFAULT_POST_LIST_LAYOUT"].map(([name, attribute]) => {
+        newBlocks.push(Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["createBlock"])(name, attribute));
+        return true;
+      });
+      replaceInnerBlocks(props.clientId, newBlocks);
+      setState({
+        innerBlocks: block
+      });
+    };
+
+    const InnerBlockProps = {
+      template: props.attributes.layoutConfig,
+      templateLock: false,
+      allowedBlocks: Object.keys(Object(_function__WEBPACK_IMPORTED_MODULE_0__["getBlockMap"])('uagb/post-grid'))
+    };
+
+    if (props.attributes.layoutConfig.length !== 0) {
+      InnerBlockProps.renderAppender = false;
+    }
+
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["Placeholder"], {
+      label: "Post Carousel Layout"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "uagb-block-all-post-grid-item-template"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["Tip"], null, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Edit the blocks inside the preview below to change the content displayed for each post within the post carousel.')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_function__WEBPACK_IMPORTED_MODULE_0__["InnerBlockLayoutContextProvider"], {
+      parentName: "uagb/post-grid",
+      parentClassName: "uagb-block-grid"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("article", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "uagb-post__inner-wrap uagb-post__edit-mode"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "uagb-post__text"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_6__["InnerBlocks"], InnerBlockProps))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: "uagb-block-all-post__actions"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+      className: "uagb-block-all-post__done-button",
+      isPrimary: true,
+      onClick: onDone
+    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Done')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+      className: "uagb-block-all-post__cancel-button",
+      isTertiary: true,
+      onClick: onCancel
+    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Cancel')), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["Button"], {
+      className: "uagb-block-all-post__reset-button",
+      onClick: onReset
+    }, Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_3__["__"])('Reset Layout')))));
+  };
+
+  const renderViewMode = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_5__["Disabled"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_blog__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    attributes: attributes,
+    className: props.className,
+    latestPosts: latestPosts,
+    block_id: props.clientId.substr(0, 8),
+    categoriesList: categoriesList,
+    deviceType: deviceType
+  }));
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, state.isEditing ? renderEditMode() : renderViewMode);
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.memo(Render));
+
+/***/ })
+
+}]);
+//# sourceMappingURL=render.js.map

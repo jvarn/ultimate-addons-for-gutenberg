@@ -1,1 +1,264 @@
-(window.webpackJsonp_ultimate_addons_for_gutenberg=window.webpackJsonp_ultimate_addons_for_gutenberg||[]).push([[104],{344:function(e,a,t){"use strict";var n=t(18),i=t.n(n)()((function(e){return e[1]}));i.push([e.i,"/**\r\n * #.# Editor Styles\r\n *\r\n * CSS for just Backend enqueued after style.scss\r\n * which makes it higher in priority.\r\n */\n.block-editor-page #wpwrap .edit-post-visual-editor ul.uagb-team__social-list {\n  display: flex;\n  padding: 0;\n  margin: 0;\n  list-style: none; }\n\n.block-editor-page #wpwrap .edit-post-visual-editor .uagb-team__social-icon a {\n  color: #333; }\n\n.wp-block-uagb-team .components-button:focus:enabled,\n.wp-block-uagb-team .components-button {\n  box-shadow: none;\n  background: transparent;\n  border: none; }\n\n.wp-block-uagb-team p.uagb-team__desc.block-editor-rich-text__editable {\n  margin: 0 0 10px; }\n",""]),a.a=i},585:function(e,a,t){"use strict";t.r(a);var n,i=t(4),o=t.n(i),r=t(1),l=t.n(r),c=t(2),s=t(12),m=t(7),u=t(5),g=t(17),b=t.n(g),p=t(344),d=0,_={injectType:"lazySingletonStyleTag",attributes:{id:"uagb-editor-styles"},insert:"head",singleton:!0},f={};f.locals=p.a.locals||{},f.use=function(){return d++||(n=b()(p.a,_)),f},f.unuse=function(){d>0&&!--d&&(n(),n=null)};var k=f;const v=e=>{Object(r.useLayoutEffect)(()=>(k.use(),()=>{k.unuse()}),[]),e=e.parentProps;const{className:a,setAttributes:t,attributes:n,mergeBlocks:i,insertBlocksAfter:g,onReplace:b,deviceType:p}=e,{align:d,tag:_,title:f,prefix:v,description_text:w,image:h,imgStyle:E,imgSize:N,imgPosition:x,twitterIcon:y,fbIcon:j,linkedinIcon:S,pinIcon:O,twitterLink:T,fbLink:R,linkedinLink:B,pinLink:L,socialTarget:C,socialEnable:I,stack:z}=n,M=l.a.createElement("div",{className:"uagb-team__title-wrap"},l.a.createElement(u.RichText,{tagName:_,value:f,className:"uagb-team__title",onChange:e=>t({title:e}),multiline:!1,placeholder:Object(c.__)("Write a Title","ultimate-addons-for-gutenberg"),onMerge:i,onSplit:g?(e,a,...n)=>{t({content:e}),g([...n,Object(m.createBlock)("core/paragraph",{content:a})])}:void 0,onRemove:()=>b([])}),l.a.createElement(u.RichText,{tagName:"div",value:v,className:"uagb-team__prefix",onChange:e=>t({prefix:e}),onMerge:i,placeholder:Object(c.__)("Write a Designation","ultimate-addons-for-gutenberg"),onSplit:g?(e,a,...n)=>{t({content:e}),g([...n,Object(m.createBlock)("core/paragraph",{content:a})])}:void 0,onRemove:()=>b([])})),W=(e,a,t)=>{const n=t?"_blank":"_self";return l.a.createElement("li",{className:"uagb-team__social-icon"},l.a.createElement("a",{href:a,"aria-label":e,target:n,title:"",rel:"noopener noreferrer"},Object(s.a)(e)))},A=l.a.createElement("div",{className:"uagb-team__social-icon-wrap"},l.a.createElement("ul",{className:"uagb-team__social-list"},""!==y&&W(y,T,C),""!==j&&W(j,R,C),""!==S&&W(S,B,C),""!==O&&W(O,L,C))),D=l.a.createElement("div",{className:"uagb-team__desc-wrap"},l.a.createElement(u.RichText,{tagName:"p",value:w,placeholder:Object(c.__)("Write a Description","ultimate-addons-for-gutenberg"),className:"uagb-team__desc",onChange:e=>t({description_text:e}),onMerge:i,onSplit:g?(e,a,...n)=>{t({content:e}),g([...n,Object(m.createBlock)("core/paragraph",{content:a})])}:void 0,onRemove:()=>b([])}));let J="",P="";h&&(J=h.sizes,P=h.sizes&&J[N]?J[N].url:h.url);let q="";return""!==P&&(q=l.a.createElement("div",{className:o()("uagb-team__image-wrap","uagb-team__image-crop-"+E)},l.a.createElement("img",{className:"",src:P,alt:h.alt?h.alt:""}))),l.a.createElement(l.a.Fragment,null,l.a.createElement("div",{className:o()(a,"uagb-team","uagb-team__outer-wrap","uagb-team__image-position-"+x,"uagb-team__align-"+d,"uagb-team__stack-"+z,"uagb-editor-preview-mode-"+p.toLowerCase(),"uagb-block-"+e.clientId.substr(0,8))},l.a.createElement("div",{className:"uagb-team__wrap"},"left"===x&&q,l.a.createElement("div",{className:"uagb-team__content"},"above"===x&&q,M,D,I&&A),"right"===x&&q)))};a.default=l.a.memo(v)}}]);
+(window["webpackJsonp_ultimate_addons_for_gutenberg"] = window["webpackJsonp_ultimate_addons_for_gutenberg"] || []).push([["chunks/team/render"],{
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/blocks/team/editor.lazy.scss":
+/*!*************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/blocks/team/editor.lazy.scss ***!
+  \*************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/cssWithMappingToString.js */ "./node_modules/css-loader/dist/runtime/cssWithMappingToString.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()(_node_modules_css_loader_dist_runtime_cssWithMappingToString_js__WEBPACK_IMPORTED_MODULE_0___default.a);
+// Module
+___CSS_LOADER_EXPORT___.push([module.i, "/**\r\n * #.# Editor Styles\r\n *\r\n * CSS for just Backend enqueued after style.scss\r\n * which makes it higher in priority.\r\n */\n.block-editor-page #wpwrap .edit-post-visual-editor ul.uagb-team__social-list {\n  display: flex;\n  padding: 0;\n  margin: 0;\n  list-style: none; }\n\n.block-editor-page #wpwrap .edit-post-visual-editor .uagb-team__social-icon a {\n  color: #333; }\n\n.wp-block-uagb-team .components-button:focus:enabled,\n.wp-block-uagb-team .components-button {\n  box-shadow: none;\n  background: transparent;\n  border: none; }\n\n.wp-block-uagb-team p.uagb-team__desc.block-editor-rich-text__editable {\n  margin: 0 0 10px; }\n", "",{"version":3,"sources":["webpack://./src/blocks/team/editor.lazy.scss"],"names":[],"mappings":"AAAA;;;;;EAKE;AACF;EACE,aAAa;EACb,UAAU;EACV,SAAS;EACT,gBAAgB,EAAE;;AAEpB;EACE,WAAW,EAAE;;AAEf;;EAEE,gBAAgB;EAChB,uBAAuB;EACvB,YAAY,EAAE;;AAEhB;EACE,gBAAgB,EAAE","sourcesContent":["/**\r\n * #.# Editor Styles\r\n *\r\n * CSS for just Backend enqueued after style.scss\r\n * which makes it higher in priority.\r\n */\n.block-editor-page #wpwrap .edit-post-visual-editor ul.uagb-team__social-list {\n  display: flex;\n  padding: 0;\n  margin: 0;\n  list-style: none; }\n\n.block-editor-page #wpwrap .edit-post-visual-editor .uagb-team__social-icon a {\n  color: #333; }\n\n.wp-block-uagb-team .components-button:focus:enabled,\n.wp-block-uagb-team .components-button {\n  box-shadow: none;\n  background: transparent;\n  border: none; }\n\n.wp-block-uagb-team p.uagb-team__desc.block-editor-rich-text__editable {\n  margin: 0 0 10px; }\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ __webpack_exports__["default"] = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./src/blocks/team/editor.lazy.scss":
+/*!******************************************!*\
+  !*** ./src/blocks/team/editor.lazy.scss ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_lib_loader_js_editor_lazy_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/sass-loader/lib/loader.js!./editor.lazy.scss */ "./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js!./src/blocks/team/editor.lazy.scss");
+
+            
+
+var refs = 0;
+var update;
+var options = {"injectType":"lazySingletonStyleTag","attributes":{"id":"uagb-editor-styles"}};
+
+options.insert = "head";
+options.singleton = true;
+
+var exported = {};
+
+exported.locals = _node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_lib_loader_js_editor_lazy_scss__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {};
+exported.use = function() {
+  if (!(refs++)) {
+    update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_node_modules_sass_loader_lib_loader_js_editor_lazy_scss__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+  }
+
+  return exported;
+};
+exported.unuse = function() {
+  if (refs > 0 && !--refs) {
+    update();
+    update = null;
+  }
+};
+
+
+
+;
+       /* harmony default export */ __webpack_exports__["default"] = (exported);
+
+
+/***/ }),
+
+/***/ "./src/blocks/team/render.js":
+/*!***********************************!*\
+  !*** ./src/blocks/team/render.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! classnames */ "./node_modules/classnames/index.js");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
+/* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Controls_renderIcon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @Controls/renderIcon */ "./blocks-config/uagb-controls/renderIcon.js");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @wordpress/blocks */ "@wordpress/blocks");
+/* harmony import */ var _wordpress_blocks__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
+/* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _editor_lazy_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.lazy.scss */ "./src/blocks/team/editor.lazy.scss");
+
+
+
+
+
+
+
+
+const Render = props => {
+  // Add and remove the CSS on the drop and remove of the component.
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useLayoutEffect"])(() => {
+    _editor_lazy_scss__WEBPACK_IMPORTED_MODULE_6__["default"].use();
+    return () => {
+      _editor_lazy_scss__WEBPACK_IMPORTED_MODULE_6__["default"].unuse();
+    };
+  }, []);
+  props = props.parentProps;
+  const {
+    className,
+    setAttributes,
+    attributes,
+    mergeBlocks,
+    insertBlocksAfter,
+    onReplace,
+    deviceType
+  } = props;
+  const {
+    align,
+    tag,
+    title,
+    prefix,
+    description_text,
+    image,
+    imgStyle,
+    imgSize,
+    imgPosition,
+    twitterIcon,
+    fbIcon,
+    linkedinIcon,
+    pinIcon,
+    twitterLink,
+    fbLink,
+    linkedinLink,
+    pinLink,
+    socialTarget,
+    socialEnable,
+    stack
+  } = attributes;
+  const titleHtml = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "uagb-team__title-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["RichText"], {
+    tagName: tag,
+    value: title,
+    className: "uagb-team__title",
+    onChange: value => setAttributes({
+      title: value
+    }),
+    multiline: false,
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Write a Title', 'ultimate-addons-for-gutenberg'),
+    onMerge: mergeBlocks,
+    onSplit: insertBlocksAfter ? (before, after, ...blocks) => {
+      setAttributes({
+        content: before
+      });
+      insertBlocksAfter([...blocks, Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["createBlock"])('core/paragraph', {
+        content: after
+      })]);
+    } : undefined,
+    onRemove: () => onReplace([])
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["RichText"], {
+    tagName: "div",
+    value: prefix,
+    className: "uagb-team__prefix",
+    onChange: value => setAttributes({
+      prefix: value
+    }),
+    onMerge: mergeBlocks,
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Write a Designation', 'ultimate-addons-for-gutenberg'),
+    onSplit: insertBlocksAfter ? (before, after, ...blocks) => {
+      setAttributes({
+        content: before
+      });
+      insertBlocksAfter([...blocks, Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["createBlock"])('core/paragraph', {
+        content: after
+      })]);
+    } : undefined,
+    onRemove: () => onReplace([])
+  }));
+
+  const socialHtml = (icon, link, target) => {
+    const target_value = target ? '_blank' : '_self';
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("li", {
+      className: "uagb-team__social-icon"
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+      href: link,
+      "aria-label": icon,
+      target: target_value,
+      title: "",
+      rel: "noopener noreferrer"
+    }, Object(_Controls_renderIcon__WEBPACK_IMPORTED_MODULE_3__["default"])(icon)));
+  };
+
+  const socialLinks = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "uagb-team__social-icon-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+    className: "uagb-team__social-list"
+  }, '' !== twitterIcon && socialHtml(twitterIcon, twitterLink, socialTarget), '' !== fbIcon && socialHtml(fbIcon, fbLink, socialTarget), '' !== linkedinIcon && socialHtml(linkedinIcon, linkedinLink, socialTarget), '' !== pinIcon && socialHtml(pinIcon, pinLink, socialTarget))); // Get description and seperator components.
+
+  const descHtml = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "uagb-team__desc-wrap"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_5__["RichText"], {
+    tagName: "p",
+    value: description_text,
+    placeholder: Object(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_2__["__"])('Write a Description', 'ultimate-addons-for-gutenberg'),
+    className: "uagb-team__desc",
+    onChange: value => setAttributes({
+      description_text: value
+    }),
+    onMerge: mergeBlocks,
+    onSplit: insertBlocksAfter ? (before, after, ...blocks) => {
+      setAttributes({
+        content: before
+      });
+      insertBlocksAfter([...blocks, Object(_wordpress_blocks__WEBPACK_IMPORTED_MODULE_4__["createBlock"])('core/paragraph', {
+        content: after
+      })]);
+    } : undefined,
+    onRemove: () => onReplace([])
+  }));
+  let size = '';
+  let imgUrl = '';
+
+  if (image) {
+    size = image.sizes;
+
+    if (image.sizes) {
+      imgUrl = size[imgSize] ? size[imgSize].url : image.url;
+    } else {
+      imgUrl = image.url;
+    }
+  }
+
+  let imageHtml = '';
+
+  if ('' !== imgUrl) {
+    imageHtml = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+      className: classnames__WEBPACK_IMPORTED_MODULE_0___default()('uagb-team__image-wrap', `uagb-team__image-crop-${imgStyle}`)
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("img", {
+      className: "",
+      src: imgUrl,
+      alt: image.alt ? image.alt : ''
+    }));
+  }
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, 'uagb-team', 'uagb-team__outer-wrap', `uagb-team__image-position-${imgPosition}`, `uagb-team__align-${align}`, `uagb-team__stack-${stack}`, `uagb-editor-preview-mode-${deviceType.toLowerCase()}`, `uagb-block-${props.clientId.substr(0, 8)}`)
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "uagb-team__wrap"
+  }, imgPosition === 'left' && imageHtml, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+    className: "uagb-team__content"
+  }, imgPosition === 'above' && imageHtml, titleHtml, descHtml, socialEnable && socialLinks), imgPosition === 'right' && imageHtml)));
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.memo(Render));
+
+/***/ })
+
+}]);
+//# sourceMappingURL=render.js.map
