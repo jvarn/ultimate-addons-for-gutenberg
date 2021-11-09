@@ -57,10 +57,12 @@ const UAGCopyPasteStyles = (props) => {
         if ( ! styles ) {
             return;
         }
-        console.log(select( 'core/block-editor' ) );
-        console.log(select('core/edit-post'));
-        console.log(select( 'core/block-editor' ).getSettings(selectedBlock.clientId));
-        console.log(styles);
+
+        const uagPasteEvent = new CustomEvent(`uag-paste-custom-event-${selectedBlockName}`, {
+			detail: styles,
+		});
+		document.dispatchEvent(uagPasteEvent);
+
     };
 
     return (
