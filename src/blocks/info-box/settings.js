@@ -909,7 +909,7 @@ const Settings = ( props ) => {
 												}
 											/>
 										 }
-										// disableBottomSeparator={ true }
+										disableBottomSeparator={ false }
 									/>
 									<Range
 										label={ __(
@@ -1959,7 +1959,7 @@ const Settings = ( props ) => {
 											value: ctaBorderStyle,
 											label: 'ctaBorderStyle',
 											title: __(
-												'Border Style',
+												'Style',
 												'ultimate-addons-for-gutenberg'
 											),
 										} }
@@ -1995,6 +1995,7 @@ const Settings = ( props ) => {
 												'ultimate-addons-for-gutenberg'
 											),
 										} }
+										disableBottomSeparator={ true }
 									/>
 								) }
 							</>

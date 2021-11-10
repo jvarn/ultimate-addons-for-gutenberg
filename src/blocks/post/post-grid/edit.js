@@ -204,6 +204,7 @@ export default compose(
 		const currentTax = allTaxonomy[ postType ];
 		let categoriesList = [];
 		let rest_base = '';
+		
 		if ( true === postPagination && 'empty' === paginationMarkup ) {
 			const formData = new window.FormData();
 
@@ -212,7 +213,7 @@ export default compose(
 				'nonce',
 				uagb_blocks_info.uagb_ajax_nonce
 			);
-			formData.append( 'attributes', props.attributes );
+			formData.append( 'attributes', JSON.stringify( props.attributes ) );
 	
 			apiFetch( {
 				url: uagb_blocks_info.ajax_url,
