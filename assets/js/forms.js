@@ -18,11 +18,11 @@ UAGBForms = { // eslint-disable-line no-undef
 						return false;
 					}
 					return true;
-				} ); 
+				} );
 			}
 		}
 		const toggleinput = form.querySelectorAll( '.uagb-forms-toggle-input' );
-		
+
 		if( toggleinput.length !== 0 ){
 			for ( let j = 0; j < toggleinput.length; j++ ) {
 				toggleinput[j].addEventListener( 'change', function () {
@@ -42,7 +42,7 @@ UAGBForms = { // eslint-disable-line no-undef
 		if( requiredCheckboxes.length !== 0 ){
 			for ( let k = 0; k < requiredCheckboxes; k++ ) {
 				const checkboxes = requiredCheckboxes[k].querySelectorAll( 'input[type=checkbox]' );
-			
+
 				if ( checkboxes.length > 0 ) {
 					for ( let l = 0; l < checkboxes.length; l++ ) {
 						checkboxes[l].addEventListener( 'change', window.UAGBForms._checkValidity );
@@ -52,7 +52,7 @@ UAGBForms = { // eslint-disable-line no-undef
 				}
 			}
 		}
-	
+
 		//append recaptcha js when enabled.
 		if ( attr.reCaptchaEnable === true && attr.reCaptchaType === 'v2' && attr.reCaptchaSiteKeyV2 ) {
 
@@ -60,7 +60,7 @@ UAGBForms = { // eslint-disable-line no-undef
 			recaptchaLink.type = 'text/javascript';
 			recaptchaLink.src = 'https://www.google.com/recaptcha/api.js';
 			document.head.appendChild( recaptchaLink );
-			
+
 		} else if ( attr.reCaptchaEnable === true && attr.reCaptchaType === 'v3' &&	attr.reCaptchaSiteKeyV3 ) {
 			if ( attr.hidereCaptchaBatch ) {
 				if ( document.getElementsByClassName( 'grecaptcha-badge' )[ 0 ] === undefined ) {
@@ -187,7 +187,7 @@ UAGBForms = { // eslint-disable-line no-undef
 		}
 
 		const originalSerialized = window.UAGBForms._serializeIt( form );
-	
+
 		const postData = {};
 
 		for ( let i = 0; i < originalSerialized.length; i++ ) {
@@ -222,6 +222,7 @@ UAGBForms = { // eslint-disable-line no-undef
 			spinner.class = 'components-spinner';
 		//add spiner to form button to show processing.
 		form.querySelector( '.uagb-forms-main-submit-button-wrap' ).appendChild( spinner );
+		const captchaKey = uagab_captcha_keys ? uagab_captcha_keys : '';
 
 		fetch( uagb_forms_data.ajax_url, { // eslint-disable-line no-undef
 			method: 'POST',
@@ -231,26 +232,26 @@ UAGBForms = { // eslint-disable-line no-undef
 				nonce: uagb_forms_data.uagb_forms_ajax_nonce,
 				form_data: JSON.stringify( postData ),
 				sendAfterSubmitEmail: attr.sendAfterSubmitEmail,
-				after_submit_data,
-				uagab_captcha_keys,
+				after_submit_data : JSON.stringify( after_submit_data ),
+				uagab_captcha_keys :captchaKey,
 				captcha_response,
 			  } ),
 		  } )
-		  .then( function( response ){
+		  .then( ( resp ) => resp.json() )
+		  .then( function( data ){
 			const hideForm = document.querySelector( '[name="uagb-form-' + attr.block_id + '"]' );
 			hideForm.style.display = 'none';
-			if ( 200 === response.status ) {
+			if ( 200 === data.data ) {
 				if ( 'message' === attr.confirmationType ) {
 					const errorMsg = document.querySelector( '.uagb-forms-success-message-' + attr.block_id );
 					errorMsg.classList.remove( 'uagb-forms-submit-message-hide' );
 					errorMsg.classList.add( 'uagb-forms-success-message' );
-				
 				}
 
 				if ( 'url' === attr.confirmationType ) {
 					window.location.replace( attr.confirmationUrl );
 				}
-			} else if ( 400 === response.status ) {
+			} else if ( 400 === data.data ) {
 				if ( 'message' === attr.confirmationType ) {
 					const successMsg = document.querySelector( '.uagb-forms-failed-message-' + attr.block_id );
 					successMsg.classList.remove( 'uagb-forms-submit-message-hide' );
@@ -265,16 +266,16 @@ UAGBForms = { // eslint-disable-line no-undef
 
 	_serializeIt( form ) {
 		return (
-		  Array.apply( 0, form.elements ).map( x => 
+		  Array.apply( 0, form.elements ).map( x =>
 			(
-			  ( obj => 
+			  ( obj =>
 				( // eslint-disable-line no-nested-ternary
 				  x.type === 'radio' ||
 				  x.type === 'checkbox'
 				) ?
-				  x.checked ? 
+				  x.checked ?
 					obj
-				  : 
+				  :
 					null
 				:
 				  obj

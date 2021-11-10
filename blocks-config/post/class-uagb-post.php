@@ -951,6 +951,42 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 				),
 
 				// Spacing Attributes.
+				'paddingTop'              => array(
+					'type' => 'number',
+				),
+				'paddingBottom'           => array(
+					'type' => 'number',
+				),
+				'paddingRight'            => array(
+					'type' => 'number',
+				),
+				'paddingLeft'             => array(
+					'type' => 'number',
+				),
+				'paddingTopMobile'        => array(
+					'type' => 'number',
+				),
+				'paddingBottomMobile'     => array(
+					'type' => 'number',
+				),
+				'paddingRightMobile'      => array(
+					'type' => 'number',
+				),
+				'paddingLeftMobile'       => array(
+					'type' => 'number',
+				),
+				'paddingBtnTop'           => array(
+					'type' => 'number',
+				),
+				'paddingBtnBottom'        => array(
+					'type' => 'number',
+				),
+				'paddingBtnRight'         => array(
+					'type' => 'number',
+				),
+				'paddingBtnLeft'          => array(
+					'type' => 'number',
+				),
 				'contentPadding'          => array(
 					'type'    => 'number',
 					'default' => 20,
@@ -1514,7 +1550,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 			$target = ( $attributes['newTab'] ) ? '_blank' : '_self';
 			do_action( "uagb_single_post_before_title_{$attributes['post_type']}", get_the_ID(), $attributes );
 			?>
-			<div class='uagb-post__text'> 
+			<div class='uagb-post__text'>
 				<<?php echo esc_html( $attributes['titleTag'] ); ?> class="uagb-post__title">
 					<a href="<?php echo esc_url( apply_filters( "uagb_single_post_link_{$attributes['post_type']}", get_the_permalink(), get_the_ID(), $attributes ) ); ?>" target="<?php echo esc_html( $target ); ?>" rel="bookmark noopener noreferrer"><?php the_title(); ?></a>
 				</<?php echo esc_html( $attributes['titleTag'] ); ?>>
@@ -1637,7 +1673,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 			$meta_sequence = array( 'author', 'date', 'comment', 'taxonomy' );
 			$meta_sequence = apply_filters( "uagb_single_post_meta_sequence_{$attributes['post_type']}", $meta_sequence, get_the_ID(), $attributes );
 			?>
-			<div class='uagb-post__text'> 
+			<div class='uagb-post__text'>
 			<div class="uagb-post-grid-byline">
 				<?php
 				foreach ( $meta_sequence as $key => $sequence ) {
@@ -1700,7 +1736,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 			$excerpt = apply_filters( "uagb_single_post_excerpt_{$attributes['post_type']}", $excerpt, get_the_ID(), $attributes );
 			do_action( "uagb_single_post_before_excerpt_{$attributes['post_type']}", get_the_ID(), $attributes );
 			?>
-				<div class='uagb-post__text'> 
+				<div class='uagb-post__text'>
 					<div class="uagb-post__excerpt">
 						<?php echo wp_kses_post( $excerpt ); ?>
 					</div>
@@ -1726,7 +1762,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 			$wrap_classes = ( true === $attributes['inheritFromTheme'] ) ? 'uagb-post__cta wp-block-button' : 'uagb-post__cta';
 			$link_classes = ( false === $attributes['inheritFromTheme'] ) ? 'uagb-post__link uagb-text-link' : 'wp-block-button__link uagb-text-link';
 			?>
-			<div class='uagb-post__text'> 
+			<div class='uagb-post__text'>
 				<div class="<?php echo esc_html( $wrap_classes ); ?>">
 					<a class="<?php echo esc_html( $link_classes ); ?>" href="<?php echo esc_url( apply_filters( "uagb_single_post_link_{$attributes['post_type']}", get_the_permalink(), get_the_ID(), $attributes ) ); ?>" target="<?php echo esc_html( $target ); ?>" rel="bookmark noopener noreferrer"><?php echo esc_html( $cta_text ); ?></a>
 				</div>
