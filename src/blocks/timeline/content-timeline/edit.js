@@ -1,6 +1,7 @@
 /**
  * BLOCK: Content Timeline.
  */
+
 import contentTimelineStyle from './styling';
 import React, { useEffect, lazy, Suspense } from 'react';
 import lazyLoader from '@Controls/lazy-loader';

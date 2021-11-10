@@ -15,7 +15,7 @@ import Range from '@Components/range/Range.js';
 import ResponsiveSlider from '@Components/responsive-slider';
 import UAGImage from '@Components/image';
 import MultiButtonsControl from '@Components/multi-buttons-control';
-
+import UAGTabsControl from '@Components/tabs';
 import {
 	AlignmentToolbar,
 	BlockControls,
@@ -860,33 +860,56 @@ const Settings = ( props ) => {
 							{ ' ' }
 							{ source_type === 'icon' && (
 								<>
-									<AdvancedPopColorControl
-										label={ __(
-											'Color',
-											'ultimate-addons-for-gutenberg'
-										) }
-										colorValue={
-											iconColor ? iconColor : ''
+									<UAGTabsControl
+										tabs={ [
+											{
+												name: 'normal',
+												title: __(
+													'Normal',
+													'ultimate-addons-for-gutenberg'
+												),
+											},
+											{
+												name: 'hover',
+												title: __(
+													'Hover',
+													'ultimate-addons-for-gutenberg'
+												),
+											},
+										] }
+										normal={
+											<AdvancedPopColorControl
+												label={ __(
+													'Color',
+													'ultimate-addons-for-gutenberg'
+												) }
+												colorValue={
+													iconColor ? iconColor : ''
+												}
+												onColorChange={ ( value ) =>
+													setAttributes( {
+														iconColor: value,
+													} )
+												}
+											/>
 										}
-										onColorChange={ ( value ) =>
-											setAttributes( {
-												iconColor: value,
-											} )
-										}
-									/>
-									<AdvancedPopColorControl
-										label={ __(
-											'Hover Color',
-											'ultimate-addons-for-gutenberg'
-										) }
-										colorValue={
-											iconHover ? iconHover : ''
-										}
-										onColorChange={ ( value ) =>
-											setAttributes( {
-												iconHover: value,
-											} )
-										}
+										hover={
+											<AdvancedPopColorControl
+												label={ __(
+													'Color',
+													'ultimate-addons-for-gutenberg'
+												) }
+												colorValue={
+													iconHover ? iconHover : ''
+												}
+												onColorChange={ ( value ) =>
+													setAttributes( {
+														iconHover: value,
+													} )
+												}
+											/>
+										 }
+										disableBottomSeparator={ false }
 									/>
 									<Range
 										label={ __(
@@ -1499,31 +1522,54 @@ const Settings = ( props ) => {
 				{ inheritFromTheme && ctaType === 'text' && (
 					<PanelBody title="CTA" initialOpen={ false }>
 						<>
-							<AdvancedPopColorControl
-								label={ __(
-									'Text Color',
-									'ultimate-addons-for-gutenberg'
-								) }
-								colorValue={ ctaLinkColor ? ctaLinkColor : '' }
-								onColorChange={ ( value ) =>
-									setAttributes( {
-										ctaLinkColor: value,
-									} )
+								<UAGTabsControl
+								tabs={ [
+									{
+										name: 'normal',
+										title: __(
+											'Normal',
+											'ultimate-addons-for-gutenberg'
+										),
+									},
+									{
+										name: 'hover',
+										title: __(
+											'Hover',
+											'ultimate-addons-for-gutenberg'
+										),
+									},
+								] }
+								normal={
+									<AdvancedPopColorControl
+										label={ __(
+											'Text Color',
+											'ultimate-addons-for-gutenberg'
+										) }
+										colorValue={ ctaLinkColor ? ctaLinkColor : '' }
+										onColorChange={ ( value ) =>
+											setAttributes( {
+												ctaLinkColor: value,
+											} )
+										}
+									/>
 								}
-							/>
-							<AdvancedPopColorControl
-								label={ __(
-									'Text Hover Color',
-									'ultimate-addons-for-gutenberg'
-								) }
-								colorValue={
-									ctaLinkHoverColor ? ctaLinkHoverColor : ''
-								}
-								onColorChange={ ( value ) =>
-									setAttributes( {
-										ctaLinkHoverColor: value,
-									} )
-								}
+								hover={
+									<AdvancedPopColorControl
+										label={ __(
+											'Text Color',
+											'ultimate-addons-for-gutenberg'
+										) }
+										colorValue={
+											ctaLinkHoverColor ? ctaLinkHoverColor : ''
+										}
+										onColorChange={ ( value ) =>
+											setAttributes( {
+												ctaLinkHoverColor: value,
+											} )
+										}
+									/>
+									}
+								// disableBottomSeparator={ true }
 							/>
 							<TypographyControl
 								label={ __(
@@ -1582,43 +1628,29 @@ const Settings = ( props ) => {
 					'all' !== ctaType && (
 						<PanelBody title="CTA" initialOpen={ false }>
 							<>
-								{ ctaType === 'text' && (
-									<>
-										<AdvancedPopColorControl
-											label={ __(
-												'Text Color',
-												'ultimate-addons-for-gutenberg'
-											) }
-											colorValue={
-												ctaLinkColor ? ctaLinkColor : ''
-											}
-											onColorChange={ ( value ) =>
-												setAttributes( {
-													ctaLinkColor: value,
-												} )
-											}
-										/>
-										<AdvancedPopColorControl
-											label={ __(
-												'Text Hover Color',
-												'ultimate-addons-for-gutenberg'
-											) }
-											colorValue={
-												ctaLinkHoverColor
-													? ctaLinkHoverColor
-													: ''
-											}
-											onColorChange={ ( value ) =>
-												setAttributes( {
-													ctaLinkHoverColor: value,
-												} )
-											}
-										/>
-									</>
-								) }
 								{ ! inheritFromTheme && ctaType === 'button' && (
 									<>
-										<AdvancedPopColorControl
+
+
+										<UAGTabsControl
+								tabs={ [
+									{
+										name: 'normal',
+										title: __(
+											'Normal',
+											'ultimate-addons-for-gutenberg'
+										),
+									},
+									{
+										name: 'hover',
+										title: __(
+											'Hover',
+											'ultimate-addons-for-gutenberg'
+										),
+									},
+								] }
+								normal={
+									<AdvancedPopColorControl
 											label={ __(
 												'Button Text Color',
 												'ultimate-addons-for-gutenberg'
@@ -1633,23 +1665,7 @@ const Settings = ( props ) => {
 													ctaBtnLinkColor: value,
 												} )
 											}
-										/>
-										<AdvancedPopColorControl
-											label={ __(
-												'Button Text Hover Color',
-												'ultimate-addons-for-gutenberg'
-											) }
-											colorValue={
-												ctaLinkHoverColor
-													? ctaLinkHoverColor
-													: ''
-											}
-											onColorChange={ ( value ) =>
-												setAttributes( {
-													ctaLinkHoverColor: value,
-												} )
-											}
-										/>
+										/>,
 										<AdvancedPopColorControl
 											label={ __(
 												'Background Color',
@@ -1664,9 +1680,27 @@ const Settings = ( props ) => {
 												} )
 											}
 										/>
+								}
+								hover={
+									<AdvancedPopColorControl
+											label={ __(
+												'Button Text Color',
+												'ultimate-addons-for-gutenberg'
+											) }
+											colorValue={
+												ctaLinkHoverColor
+													? ctaLinkHoverColor
+													: ''
+											}
+											onColorChange={ ( value ) =>
+												setAttributes( {
+													ctaLinkHoverColor: value,
+												} )
+											}
+										/>,
 										<AdvancedPopColorControl
 											label={ __(
-												'Background Hover Color',
+												'Background Color',
 												'ultimate-addons-for-gutenberg'
 											) }
 											colorValue={
@@ -1680,9 +1714,13 @@ const Settings = ( props ) => {
 												} )
 											}
 										/>
+									}
+								// disableBottomSeparator={ true }
+							/>
 									</>
 								) }
 								{ ctaType === 'text' && (
+									<>
 									<TypographyControl
 										label={ __(
 											'Typography',
@@ -1732,6 +1770,60 @@ const Settings = ( props ) => {
 										} }
 										disableLineHeight={ true }
 									/>
+									<UAGTabsControl
+										tabs={ [
+											{
+												name: 'normal',
+												title: __(
+													'Normal',
+													'ultimate-addons-for-gutenberg'
+												),
+											},
+											{
+												name: 'hover',
+												title: __(
+													'Hover',
+													'ultimate-addons-for-gutenberg'
+												),
+											},
+										] }
+										normal={
+											<AdvancedPopColorControl
+													label={ __(
+														'Text Color',
+														'ultimate-addons-for-gutenberg'
+													) }
+													colorValue={
+														ctaLinkColor ? ctaLinkColor : ''
+													}
+													onColorChange={ ( value ) =>
+														setAttributes( {
+															ctaLinkColor: value,
+														} )
+													}
+												/>
+										}
+										hover={
+											<AdvancedPopColorControl
+													label={ __(
+														'Text Color',
+														'ultimate-addons-for-gutenberg'
+													) }
+													colorValue={
+														ctaLinkHoverColor
+															? ctaLinkHoverColor
+															: ''
+													}
+													onColorChange={ ( value ) =>
+														setAttributes( {
+															ctaLinkHoverColor: value,
+														} )
+													}
+												/>
+											}
+										// disableBottomSeparator={ true }
+									/>
+									</>
 								) }
 								{ ! inheritFromTheme && ctaType === 'button' && (
 									<TypographyControl
@@ -1867,7 +1959,7 @@ const Settings = ( props ) => {
 											value: ctaBorderStyle,
 											label: 'ctaBorderStyle',
 											title: __(
-												'Border Style',
+												'Style',
 												'ultimate-addons-for-gutenberg'
 											),
 										} }
@@ -1903,6 +1995,7 @@ const Settings = ( props ) => {
 												'ultimate-addons-for-gutenberg'
 											),
 										} }
+										disableBottomSeparator={ true }
 									/>
 								) }
 							</>
