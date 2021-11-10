@@ -2,14 +2,39 @@ import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
 import { __ } from '@wordpress/i18n';
 import { registerPlugin } from '@wordpress/plugins';
 import { select } from '@wordpress/data';
+import React, { useEffect } from 'react';
 
 const UAGCopyPasteStyles = (props) => {
+
+    useEffect( () => {
+        console.log('in on load');
+        let uagLocalStorageObject = JSON.parse(localStorage.getItem('uag-copy-paste-styles'));
+
+        if ( ! uagLocalStorageObject ) {
+            localStorage.setItem('uag-copy-paste-styles', JSON.stringify({}));
+        }
+
+        if ( uagLocalStorageObject ) {
+            for (let block in uagLocalStorageObject) {
+
+               let hoursSinceStylesSaved = Math.abs(Date.now() - uagLocalStorageObject[block]['stylesSavedTimeStamp']) / 36e5;
+                
+                if ( hoursSinceStylesSaved >= 8 ) {
+                    delete uagLocalStorageObject[block];
+                }
+            }
+
+            localStorage.setItem('uag-copy-paste-styles', JSON.stringify(uagLocalStorageObject));
+        }
+        
+	}, [] );
 
     const copyStylesHandler = () => {
        
         let selectedBlock = select( 'core/block-editor' ).getSelectedBlock();
+        let uagLocalStorageObject = JSON.parse(localStorage.getItem('uag-copy-paste-styles'));
 
-        if ( ! selectedBlock ) {
+        if ( ! selectedBlock || ! uagLocalStorageObject ) {
             return;
         }
 
@@ -33,14 +58,17 @@ const UAGCopyPasteStyles = (props) => {
             styles[attribute] = attributes[attribute];
         } );
 
-        console.log(styles);
+        styles['stylesSavedTimeStamp'] = Date.now();
 
-        localStorage.setItem(`uag-${selectedBlockName}-styles`, JSON.stringify(styles));
+        uagLocalStorageObject[`uag-${selectedBlockName}-styles`] = styles;
+
+        localStorage.setItem('uag-copy-paste-styles', JSON.stringify(uagLocalStorageObject));
     };
 
     const pasteStylesHandler = () => {
         
         let selectedBlock = select( 'core/block-editor' ).getSelectedBlock();
+        let uagLocalStorageObject = JSON.parse(localStorage.getItem('uag-copy-paste-styles'));
 
         if ( ! selectedBlock ) {
             return;
@@ -48,7 +76,7 @@ const UAGCopyPasteStyles = (props) => {
 
         let selectedBlockName = selectedBlock.name.replace( 'uagb/', '' );
 
-        let styles = JSON.parse(localStorage.getItem(`uag-${selectedBlockName}-styles`));
+        let styles = uagLocalStorageObject[`uag-${selectedBlockName}-styles`];
 
         if ( ! styles ) {
             return;

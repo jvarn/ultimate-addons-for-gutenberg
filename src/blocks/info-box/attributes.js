@@ -588,6 +588,9 @@ const attributes = {
 		type: 'string',
 		default: 'px',
 	},
+	blockStyles: {
+		type: 'array',
+	},
 };
 
 export default attributes;

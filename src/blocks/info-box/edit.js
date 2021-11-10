@@ -16,10 +16,12 @@ const Settings = lazy( () =>
 
 const UAGBInfoBox = ( props ) => {
 	useEffect( () => {
-		// Assigning block_id in the attribute.
-		props.setAttributes( { block_id: props.clientId.substr( 0, 8 ) } );
 
-		props.setAttributes( { classMigrate: true } );
+		const { setAttributes } = props;
+		// Assigning block_id in the attribute.
+		setAttributes( { block_id: props.clientId.substr( 0, 8 ) } );
+
+		setAttributes( { classMigrate: true } );
 
 		// Pushing Style tag for this block css.
 		const $style = document.createElement( 'style' );
@@ -40,20 +42,30 @@ const UAGBInfoBox = ( props ) => {
 
 		if ( ctaBtnVertPadding ) {
 			if ( ! paddingBtnTop ) {
-				props.setAttributes( { paddingBtnTop: ctaBtnVertPadding } );
+				setAttributes( { paddingBtnTop: ctaBtnVertPadding } );
 			}
 			if ( ! paddingBtnBottom ) {
-				props.setAttributes( { paddingBtnBottom: ctaBtnVertPadding } );
+				setAttributes( { paddingBtnBottom: ctaBtnVertPadding } );
 			}
 		}
 		if ( ctaBtnHrPadding ) {
 			if ( ! paddingBtnRight ) {
-				props.setAttributes( { paddingBtnRight: ctaBtnHrPadding } );
+				setAttributes( { paddingBtnRight: ctaBtnHrPadding } );
 			}
 			if ( ! paddingBtnLeft ) {
-				props.setAttributes( { paddingBtnLeft: ctaBtnHrPadding } );
+				setAttributes( { paddingBtnLeft: ctaBtnHrPadding } );
 			}
 		}
+
+		const blockStyles = [
+			'headingColor',
+			'subHeadingColor',
+			'separatorColor',
+			'iconColor'
+		];
+
+		setAttributes( { blockStyles: blockStyles } );
+
 	}, [] );
 
 	useEffect( () => {
