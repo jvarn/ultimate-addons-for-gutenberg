@@ -384,11 +384,11 @@ const attributes = {
 	},
 	borderColor: {
 		type: 'string',
-		default: '#ddd',
+		default: '',
 	},
 	borderHoverColor: {
 		type: 'string',
-		default: '#333',
+		default: '',
 	},
 
 	// Typography

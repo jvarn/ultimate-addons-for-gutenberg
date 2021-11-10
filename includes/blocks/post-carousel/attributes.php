@@ -9,7 +9,7 @@
 
 return array(
 	'post_type'               => 'carousel',
-	'inheritFromTheme'        => false,
+	'inheritFromTheme'        => true,
 	'align'                   => 'left',
 	'rowGap'                  => '20',
 	'columnGap'               => '20',

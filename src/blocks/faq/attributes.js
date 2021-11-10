@@ -87,11 +87,11 @@ const attributes = {
 	},
 	borderColor: {
 		type: 'string',
-		default: '#D2D2D2',
+		default: '',
 	},
 	borderHoverColor: {
 		type: 'string',
-		default: '#D2D2D2',
+		default: '',
 	},
 	questionTextColor: {
 		type: 'string',

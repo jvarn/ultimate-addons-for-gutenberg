@@ -66,7 +66,7 @@ return array(
 	'iconimgBorderRadius'     => '0',
 	'seperatorStyle'          => 'solid',
 	'seperatorWidth'          => '30',
-	'seperatorColor'          => '#333',
+	'seperatorColor'          => '',
 	'seperatorThickness'      => '2',
 	'thicknessUnit'           => 'px',
 	'ctaType'                 => 'none',
