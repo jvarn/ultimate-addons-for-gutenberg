@@ -1,11 +1,7 @@
 import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
 import { __ } from '@wordpress/i18n';
 import { registerPlugin } from '@wordpress/plugins';
-import { select, withSelect } from '@wordpress/data';
-import { compose } from '@wordpress/compose';
-import { withSpokenMessages } from '@wordpress/components';
-
-
+import { select } from '@wordpress/data';
 
 const UAGCopyPasteStyles = (props) => {
 
@@ -81,33 +77,7 @@ const UAGCopyPasteStyles = (props) => {
     );
 };
 
-// export default compose(
-// 	withSelect( ( select ) => {
-// 		const selectedBlock = select( 'core/block-editor' ).getSelectedBlock();
-
-// 		if ( ! selectedBlock ) {
-// 			return {};
-// 		}
-
-// 		return {
-// 			selectedBlock,
-// 		};
-// 	} ),
-// )( UAGCopyPasteStyles );
-
-export default compose( [
-	withSelect( () => {
-		const { getSelectedBlockCount, getSelectedBlock, getMultiSelectedBlocks } = select( 'core/block-editor' );
-		const { getBlock } = select( 'core/block-editor' );
-
-		return {
-			selectedBlockCount: getSelectedBlockCount(),
-			selectedBlock: getSelectedBlock(),
-			selectedBlocks: getMultiSelectedBlocks(),
-		};
-	} ),
-	withSpokenMessages,
-] )( UAGCopyPasteStyles );
+export default UAGCopyPasteStyles;
 
 registerPlugin( 'uag-copy-paste', {
 	render: UAGCopyPasteStyles,

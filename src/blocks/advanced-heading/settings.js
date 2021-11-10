@@ -9,6 +9,7 @@ import InspectorTab, {
 import AdvancedPopColorControl from '@Components/color-control/advanced-pop-color-control.js';
 import Range from '@Components/range/Range.js';
 import MultiButtonsControl from '@Components/multi-buttons-control';
+
 import { __ } from '@wordpress/i18n';
 
 import {
@@ -472,12 +473,6 @@ const Settings = ( props ) => {
 			</PanelBody>
 		);
 	};
-
-	const styles = [
-		{ label: 'headingColor', value: headingColor },
-		{ label: 'separatorColor', value: separatorColor },
-		{ label: 'subHeadingColor', value: subHeadingColor },
-	];
 
 	return (
 		<div>
