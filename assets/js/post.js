@@ -146,7 +146,6 @@
 			}
 		},
 		_callAjax( $scope, $obj, $attr, loader, append = false, count ) {
-			console.log('in Call Ajax');
 			$.ajax( {
 				url: uagb_data.ajax_url,
 				data: {
@@ -158,10 +157,6 @@
 				dataType: 'json',
 				type: 'POST',
 				success( data ) {
-					console.log(data);
-					console.log($( data.data ));
-					console.log(document.querySelectorAll( data.data ));
-
 					$scope
 						.find( '.is-masonry' )
 						.isotope( 'insert', $( data.data ) );
@@ -191,7 +186,7 @@ function uagb_carousel_height( id ) { // eslint-disable-line no-unused-vars
 }
 
 // Unset Carousel Height for Customiser.
-function uagb_carousel_unset_height( id ) { // e	slint-disable-line no-unused-vars
+function uagb_carousel_unset_height( id ) { // eslint-disable-line no-unused-vars
 	const wrap = jQuery( '#block-' + id );
 	const scope = wrap
 		.find( '.wp-block-uagb-post-carousel' )
