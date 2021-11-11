@@ -27,12 +27,15 @@ const attributes = {
 	},
 	headingColor: {
 		type: 'string',
+		isUAGStyle: true,
 	},
 	subHeadingColor: {
 		type: 'string',
+		isUAGStyle: true,
 	},
 	separatorColor: {
 		type: 'string',
+		isUAGStyle: true,
 	},
 	headingTag: {
 		type: 'string',
@@ -160,9 +163,6 @@ const attributes = {
 	},
 	separatorHoverColor: {
 		type: 'string',
-	},
-	blockStyles: {
-		type: 'array',
 	},
 };
 

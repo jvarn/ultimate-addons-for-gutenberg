@@ -33,12 +33,15 @@ const attributes = {
 	},
 	headingColor: {
 		type: 'string',
+		isUAGStyle: true,
 	},
 	subHeadingColor: {
 		type: 'string',
+		isUAGStyle: true,
 	},
 	prefixColor: {
 		type: 'string',
+		isUAGStyle: true,
 	},
 	icon: {
 		type: 'string',
@@ -67,6 +70,7 @@ const attributes = {
 	iconColor: {
 		type: 'string',
 		default: '#333',
+		isUAGStyle: true,
 	},
 	prefixTag: {
 		type: 'string',
@@ -291,6 +295,7 @@ const attributes = {
 	seperatorColor: {
 		type: 'string',
 		default: '#333',
+		isUAGStyle: true,
 	},
 	seperatorWidth: {
 		type: 'number',
@@ -587,9 +592,6 @@ const attributes = {
 	iconimgBorderRadiusUnit: {
 		type: 'string',
 		default: 'px',
-	},
-	blockStyles: {
-		type: 'array',
 	},
 };
 

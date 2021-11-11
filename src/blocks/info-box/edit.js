@@ -57,14 +57,12 @@ const UAGBInfoBox = ( props ) => {
 			}
 		}
 
-		const blockStyles = [
-			'headingColor',
-			'subHeadingColor',
-			'separatorColor',
-			'iconColor'
-		];
-
-		setAttributes( { blockStyles: blockStyles } );
+		// UAG Paste Styles Event.
+		document.addEventListener( 'uag-paste-custom-event-info-box', function( event ) {
+			if ( event.detail ) {
+				setAttributes(event.detail);
+			}
+		} );
 
 	}, [] );
 

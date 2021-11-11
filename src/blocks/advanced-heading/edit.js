@@ -41,14 +41,6 @@ const UAGBAdvancedHeading = ( props ) => {
 		);
 		document.head.appendChild( $style );
 
-		const blockStyles = [
-			'headingColor',
-			'subHeadingColor',
-			'separatorColor',
-		];
-
-		setAttributes( { blockStyles: blockStyles } );
-
 		// UAG Paste Styles Event.
 		document.addEventListener( 'uag-paste-custom-event-advanced-heading', function( event ) {
 			if ( event.detail ) {

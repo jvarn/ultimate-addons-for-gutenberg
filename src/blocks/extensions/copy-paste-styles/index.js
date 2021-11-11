@@ -4,10 +4,18 @@ import { registerPlugin } from '@wordpress/plugins';
 import { select } from '@wordpress/data';
 import React, { useEffect } from 'react';
 
+// Import Blocks Attributes.
+import advancedHeadingAttributes from './../../advanced-heading/attributes';
+import infoBoxAttributes from './../../info-box/attributes';
+
+const blocksAttributes = {
+    'advanced-heading': advancedHeadingAttributes,
+    'info-box': infoBoxAttributes,
+};
+
 const UAGCopyPasteStyles = (props) => {
 
     useEffect( () => {
-        console.log('in on load');
         let uagLocalStorageObject = JSON.parse(localStorage.getItem('uag-copy-paste-styles'));
 
         if ( ! uagLocalStorageObject ) {
@@ -17,8 +25,8 @@ const UAGCopyPasteStyles = (props) => {
         if ( uagLocalStorageObject ) {
             for (let block in uagLocalStorageObject) {
 
-               let hoursSinceStylesSaved = Math.abs(Date.now() - uagLocalStorageObject[block]['stylesSavedTimeStamp']) / 36e5;
-                
+                let hoursSinceStylesSaved = Math.abs(Date.now() - uagLocalStorageObject[block]['stylesSavedTimeStamp']) / 36e5;
+            
                 if ( hoursSinceStylesSaved >= 8 ) {
                     delete uagLocalStorageObject[block];
                 }
@@ -41,21 +49,17 @@ const UAGCopyPasteStyles = (props) => {
         let styles = {};
 
         let selectedBlockName = selectedBlock.name.replace( 'uagb/', '' );
-
+        
         const {
             attributes
         } = selectedBlock;
 
-        const {
-            blockStyles
-        } = attributes;
+        let blockAttributes = blocksAttributes[selectedBlockName];
 
-        if ( ! blockStyles ) {
-            return;
-        }
-
-        blockStyles.map( ( attribute ) => {
-            styles[attribute] = attributes[attribute];
+        Object.keys(blockAttributes).map( ( attribute ) => {
+            if ( blockAttributes[attribute]['isUAGStyle'] ) {
+                styles[attribute] = attributes[attribute];
+            }
         } );
 
         styles['stylesSavedTimeStamp'] = Date.now();
