@@ -56,6 +56,10 @@ const UAGCopyPasteStyles = (props) => {
 
         let blockAttributes = blocksAttributes[selectedBlockName];
 
+        if ( ! blockAttributes ) {
+            return;
+        }
+        
         Object.keys(blockAttributes).map( ( attribute ) => {
             if ( blockAttributes[attribute]['isUAGStyle'] ) {
                 styles[attribute] = attributes[attribute];
