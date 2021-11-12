@@ -38,51 +38,87 @@ const UAGCopyPasteStyles = (props) => {
 	}, [] );
 
     const copyStylesHandler = () => {
+        
+        const { getSelectedBlock, hasMultiSelection, getMultiSelectedBlocks } = select( 'core/block-editor' );
        
-        let selectedBlock = select( 'core/block-editor' ).getSelectedBlock();
-        let uagLocalStorageObject = JSON.parse(localStorage.getItem('uag-copy-paste-styles'));
+        if ( hasMultiSelection() ) {
+            let multiSelectedBlocksData = getMultiSelectedBlocks();
+            multiSelectedBlocksData.map((block) => {
 
-        if ( ! selectedBlock || ! uagLocalStorageObject ) {
+                if(block) {
+                    storeBlockStyles(block);
+                }
+            });
+
             return;
         }
 
-        let styles = {};
-
-        let selectedBlockName = selectedBlock.name.replace( 'uagb/', '' );
+        let selectedBlockData = select( 'core/block-editor' ).getSelectedBlock();
         
-        const {
-            attributes
-        } = selectedBlock;
-
-        let blockAttributes = blocksAttributes[selectedBlockName];
-
-        if ( ! blockAttributes ) {
-            return;
+        if ( selectedBlockData ) {   
+            storeBlockStyles(selectedBlockData);
         }
-        
-        Object.keys(blockAttributes).map( ( attribute ) => {
-            if ( blockAttributes[attribute]['isUAGStyle'] ) {
-                styles[attribute] = attributes[attribute];
-            }
-        } );
-
-        styles['stylesSavedTimeStamp'] = Date.now();
-
-        uagLocalStorageObject[`uag-${selectedBlockName}-styles`] = styles;
-
-        localStorage.setItem('uag-copy-paste-styles', JSON.stringify(uagLocalStorageObject));
     };
 
     const pasteStylesHandler = () => {
-        
-        let selectedBlock = select( 'core/block-editor' ).getSelectedBlock();
-        let uagLocalStorageObject = JSON.parse(localStorage.getItem('uag-copy-paste-styles'));
+        const { getSelectedBlock, hasMultiSelection, getMultiSelectedBlocks } = select( 'core/block-editor' );
 
-        if ( ! selectedBlock ) {
+        if ( hasMultiSelection() ) {
+            let multiSelectedBlocksData = getMultiSelectedBlocks();
+            multiSelectedBlocksData.map((block) => {
+
+                if(block) {
+                    pasteBlockStyles(block);
+                }
+            });
+
             return;
         }
 
-        let selectedBlockName = selectedBlock.name.replace( 'uagb/', '' );
+        let selectedBlockData = select( 'core/block-editor' ).getSelectedBlock();
+
+        if (selectedBlockData) {
+            pasteBlockStyles(selectedBlockData);
+        }
+    };
+
+    const storeBlockStyles = ( blockData ) => {
+
+        const {
+            attributes,
+            name
+        } = blockData;
+
+        let blockName = name.replace( 'uagb/', '' );
+        let styles = {};
+        let blockAttributes = blocksAttributes[blockName];
+        let uagLocalStorageObject = JSON.parse(localStorage.getItem('uag-copy-paste-styles'));
+
+        if ( blockAttributes && uagLocalStorageObject ) {
+            
+            Object.keys(blockAttributes).map( ( attribute ) => {
+                if ( blockAttributes[attribute]['isUAGStyle'] ) {
+                    styles[attribute] = attributes[attribute];
+                }
+            } );
+
+            styles['stylesSavedTimeStamp'] = Date.now();
+
+            uagLocalStorageObject[`uag-${blockName}-styles`] = styles;
+
+            localStorage.setItem('uag-copy-paste-styles', JSON.stringify(uagLocalStorageObject));
+        }
+    };
+
+    const pasteBlockStyles = (blockData) => {
+
+        const {
+            name
+        } = blockData
+
+        let uagLocalStorageObject = JSON.parse(localStorage.getItem('uag-copy-paste-styles'));
+
+        let selectedBlockName = name.replace( 'uagb/', '' );
 
         let styles = uagLocalStorageObject[`uag-${selectedBlockName}-styles`];
 
