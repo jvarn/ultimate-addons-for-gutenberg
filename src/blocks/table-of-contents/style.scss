@@ -9,9 +9,12 @@
 	.uagb-toc__wrap {
 		display: inline-block;
 	}
-
+	li.uagb-toc__list{
+		padding-top: 15px;
+	}
 	ul.uagb-toc__list,
 	ol.uagb-toc__list {
+
 		padding-left: 0;
 		margin-bottom: 0;
 		margin-left: 2.2em;
