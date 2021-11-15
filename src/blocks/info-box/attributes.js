@@ -286,15 +286,13 @@ const attributes = {
 	},
 	seperatorStyle: {
 		type: 'string',
-		default: 'solid',
+		default: 'none',
 	},
 	seperatorColor: {
 		type: 'string',
-		default: '#333',
 	},
 	seperatorWidth: {
 		type: 'number',
-		default: 30,
 	},
 	separatorWidthType: {
 		type: 'string',
@@ -458,7 +456,7 @@ const attributes = {
 	},
 	showPrefix: {
 		type: 'boolean',
-		default: true,
+		default: false,
 	},
 	showTitle: {
 		type: 'boolean',

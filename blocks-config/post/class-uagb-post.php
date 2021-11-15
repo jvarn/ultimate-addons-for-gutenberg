@@ -627,7 +627,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 				),
 				'displayPostAuthor'       => array(
 					'type'    => 'boolean',
-					'default' => true,
+					'default' => false,
 				),
 				'displayPostTitle'        => array(
 					'type'    => 'boolean',
@@ -741,7 +741,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 				),
 				'bgColor'                 => array(
 					'type'    => 'string',
-					'default' => '#f5f5f5',
+					'default' => '#f6f6f6',
 				),
 
 				// Title Attributes.
@@ -1519,7 +1519,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 
 								var enableEqualHeight = ( '<?php echo esc_html( $equal_height ); ?>' )
 
-								if( enableEqualHeight ){	
+								if( enableEqualHeight ){
 									$scope.imagesLoaded( function() {
 										UAGBPostCarousel._setHeight( $scope );
 									});
