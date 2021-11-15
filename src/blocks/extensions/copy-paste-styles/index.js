@@ -88,23 +88,36 @@ const UAGCopyPasteStyles = (props) => {
             attributes,
             name
         } = blockData;
-
-        let blockName = name.replace( 'uagb/', '' );
         let styles = {};
-        let blockAttributes = blocksAttributes[blockName];
         let uagLocalStorageObject = JSON.parse(localStorage.getItem('uag-copy-paste-styles'));
 
-        if ( blockAttributes && uagLocalStorageObject ) {
-            
-            Object.keys(blockAttributes).map( ( attribute ) => {
-                if ( blockAttributes[attribute]['isUAGStyle'] ) {
-                    styles[attribute] = attributes[attribute];
-                }
-            } );
+        if ( name.includes('uagb/') ) {
+            let blockName = name.replace( 'uagb/', '' );
+            let blockAttributes = blocksAttributes[blockName];
+
+            if ( blockAttributes && uagLocalStorageObject ) {
+                
+                Object.keys(blockAttributes).map( ( attribute ) => {
+                    if ( blockAttributes[attribute]['isUAGStyle'] ) {
+                        styles[attribute] = attributes[attribute];
+                    }
+                } );
+
+                styles['stylesSavedTimeStamp'] = Date.now();
+
+                uagLocalStorageObject[`uag-${blockName}-styles`] = styles;
+
+                localStorage.setItem('uag-copy-paste-styles', JSON.stringify(uagLocalStorageObject));
+            }
+        }
+
+        if ( name.includes('core/') ) {
+            let blockName = name.replace( 'core/', '' );
+            styles = attributes;
 
             styles['stylesSavedTimeStamp'] = Date.now();
 
-            uagLocalStorageObject[`uag-${blockName}-styles`] = styles;
+            uagLocalStorageObject[`core-${blockName}-styles`] = styles;
 
             localStorage.setItem('uag-copy-paste-styles', JSON.stringify(uagLocalStorageObject));
         }
@@ -117,11 +130,27 @@ const UAGCopyPasteStyles = (props) => {
             clientId
         } = blockData
 
+        let styles;
+
         let uagLocalStorageObject = JSON.parse(localStorage.getItem('uag-copy-paste-styles'));
 
-        let selectedBlockName = name.replace( 'uagb/', '' );
+        if ( name.includes('uagb/') ) {
 
-        let styles = uagLocalStorageObject[`uag-${selectedBlockName}-styles`];
+            let selectedBlockName = name.replace( 'uagb/', '' );
+
+            styles = uagLocalStorageObject[`uag-${selectedBlockName}-styles`];
+        }
+
+        if ( name.includes('core/') ) {
+
+            let selectedBlockName = name.replace( 'core/', '' );
+
+            styles = uagLocalStorageObject[`core-${selectedBlockName}-styles`];
+
+            if (styles.content) {
+                delete styles.content;
+            }
+        }
 
         if ( ! styles ) {
             return;
