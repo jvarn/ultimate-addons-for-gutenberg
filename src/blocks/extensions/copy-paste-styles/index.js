@@ -1,7 +1,7 @@
 import { PluginBlockSettingsMenuItem } from '@wordpress/edit-post';
 import { __ } from '@wordpress/i18n';
 import { registerPlugin } from '@wordpress/plugins';
-import { select } from '@wordpress/data';
+import { select, dispatch } from '@wordpress/data';
 import React, { useEffect } from 'react';
 
 // Import Blocks Attributes.
@@ -53,7 +53,7 @@ const UAGCopyPasteStyles = (props) => {
             return;
         }
 
-        let selectedBlockData = select( 'core/block-editor' ).getSelectedBlock();
+        let selectedBlockData = getSelectedBlock();
         
         if ( selectedBlockData ) {   
             storeBlockStyles(selectedBlockData);
@@ -75,7 +75,7 @@ const UAGCopyPasteStyles = (props) => {
             return;
         }
 
-        let selectedBlockData = select( 'core/block-editor' ).getSelectedBlock();
+        let selectedBlockData = getSelectedBlock();
 
         if (selectedBlockData) {
             pasteBlockStyles(selectedBlockData);
@@ -113,7 +113,8 @@ const UAGCopyPasteStyles = (props) => {
     const pasteBlockStyles = (blockData) => {
 
         const {
-            name
+            name,
+            clientId
         } = blockData
 
         let uagLocalStorageObject = JSON.parse(localStorage.getItem('uag-copy-paste-styles'));
@@ -126,11 +127,11 @@ const UAGCopyPasteStyles = (props) => {
             return;
         }
 
-        const uagPasteEvent = new CustomEvent(`uag-paste-custom-event-${selectedBlockName}`, {
-			detail: styles,
-		});
-		document.dispatchEvent(uagPasteEvent);
+        updateBlockStyles(clientId, styles);
+    };
 
+    const updateBlockStyles = (clientId, styles) => {
+        dispatch( 'core/block-editor' ).updateBlockAttributes(clientId, styles);
     };
 
     return (

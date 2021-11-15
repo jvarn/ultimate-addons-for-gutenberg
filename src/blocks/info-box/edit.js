@@ -57,13 +57,6 @@ const UAGBInfoBox = ( props ) => {
 			}
 		}
 
-		// UAG Paste Styles Event.
-		document.addEventListener( 'uag-paste-custom-event-info-box', function( event ) {
-			if ( event.detail ) {
-				setAttributes(event.detail);
-			}
-		} );
-
 	}, [] );
 
 	useEffect( () => {

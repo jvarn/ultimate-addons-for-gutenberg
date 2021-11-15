@@ -41,12 +41,6 @@ const UAGBAdvancedHeading = ( props ) => {
 		);
 		document.head.appendChild( $style );
 
-		// UAG Paste Styles Event.
-		document.addEventListener( 'uag-paste-custom-event-advanced-heading', function( event ) {
-			if ( event.detail ) {
-				setAttributes(event.detail);
-			}
-		} );
 	}, [] );
 
 	useEffect( () => {
