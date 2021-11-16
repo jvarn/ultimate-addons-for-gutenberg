@@ -83,10 +83,11 @@ const ReviewComponent = ( props ) => {
 		if ( null !== element && undefined !== element ) {
 			element.innerHTML = styling( props );
 		}
-
-		document.querySelector( '.uagb-rating-link-wrapper' ).addEventListener( 'click', function ( event ) {
-			event.preventDefault();
-		} );
+		if( document.querySelector( '.uagb-rating-link-wrapper' )!== null ){
+			document.querySelector( '.uagb-rating-link-wrapper' ).addEventListener( 'click', function ( event ) {
+				event.preventDefault();
+			} );
+		}
 	}, [ props ] );
 
 	// Setup the attributes
@@ -238,6 +239,7 @@ export default compose(
 			'reviewRating': {
 				'@type': 'Rating',
 				'ratingValue': newAverage,
+				'worstRating': '0',
 				'bestRating': ownProps.attributes.starCount,
 			},
 			'author': {
