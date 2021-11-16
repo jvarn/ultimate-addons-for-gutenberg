@@ -13,7 +13,7 @@ return array(
 	'align'                       => 'left',
 	'rowGap'                      => '20',
 	'columnGap'                   => '20',
-	'bgColor'                     => '#e4e4e4',
+	'bgColor'                     => '#f6f6f6',
 	'titleColor'                  => '#3b3b3b',
 	'titleTag'                    => 'h4',
 	'titleFontSize'               => '',
