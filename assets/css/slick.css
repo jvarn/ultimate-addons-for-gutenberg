@@ -109,10 +109,9 @@
 	transform: translate(0, -50%);
 	cursor: pointer;
 	color: #aaa;
-	border: 1px solid #aaa;
+	border-color: #aaa;
 	outline: none;
 	background: transparent;
-	border-radius: 0;
 }
 
 .uagb-slick-carousel .slick-prev::before,

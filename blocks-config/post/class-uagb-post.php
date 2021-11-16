@@ -267,11 +267,11 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 							),
 							'arrowSize'               => array(
 								'type'    => 'number',
-								'default' => 20,
+								'default' => 24,
 							),
 							'arrowBorderSize'         => array(
 								'type'    => 'number',
-								'default' => 1,
+								'default' => 0,
 							),
 							'arrowBorderRadius'       => array(
 								'type'    => 'number',
