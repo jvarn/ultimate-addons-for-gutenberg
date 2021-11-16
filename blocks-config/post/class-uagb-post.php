@@ -279,7 +279,7 @@ if ( ! class_exists( 'UAGB_Post' ) ) {
 							),
 							'arrowColor'              => array(
 								'type'    => 'string',
-								'default' => '#aaaaaa',
+								'default' => '#000',
 							),
 							'equalHeight'             => array(
 								'type'    => 'boolean',

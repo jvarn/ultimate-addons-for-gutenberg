@@ -80,7 +80,7 @@ return array(
 	'metaBottomSpace'         => '15',
 	'excerptBottomSpace'      => '25',
 	'arrowSize'               => '24',
-	'arrowColor'              => '#aaaaaa',
+	'arrowColor'              => '#000',
 	'arrowDots'               => '',
 	'arrowBorderSize'         => '0',
 	'arrowBorderRadius'       => '0',
