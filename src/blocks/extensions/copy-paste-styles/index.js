@@ -145,11 +145,15 @@ const UAGCopyPasteStyles = (props) => {
 
             let selectedBlockName = name.replace( 'core/', '' );
 
-            styles = uagLocalStorageObject[`core-${selectedBlockName}-styles`];
+            let unwantedAttributes = ['content', 'values', 'value', 'citation', 'body', 'caption', 'foot', 'head', 'url', 'alt', 'id', 'linkDestination']; 
+            
+            styles= uagLocalStorageObject[`core-${selectedBlockName}-styles`];
 
-            if (styles.content) {
-                delete styles.content;
-            }
+            unwantedAttributes.map((attr) => {
+                if(styles[attr]) {
+                    delete styles[attr];
+                }
+            });
         }
 
         if ( ! styles ) {
