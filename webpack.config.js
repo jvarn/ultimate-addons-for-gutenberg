@@ -31,7 +31,7 @@ module.exports = {
 				'blocks-config/uagb-controls/'
 			),
 			'@Components': path.resolve( __dirname, 'src/components/' ),
-			'@Utils': path.resolve( __dirname, 'blocks-config//utils/' ),
+			'@Utils': path.resolve( __dirname, 'blocks-config/utils/' ),
 		},
 	},
 	module: {
