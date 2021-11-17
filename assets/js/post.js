@@ -9,11 +9,10 @@ window.UAGBPostCarousel = {
 			let	maxHeight = -1,
 				wrapperHeight = -1,
 				postActiveHeight = -1;
-
 			Object.keys( postActive ).forEach( ( key ) => {
 				const thisHeight = postActive[key].offsetHeight,
-				blogPost = postActive[key].querySelectorAll( '.uagb-post__inner-wrap' ),
-				blogPostHeight = blogPost[0].offsetHeight;
+				blogPost = postActive[key].querySelector( '.uagb-post__inner-wrap' ),
+				blogPostHeight = blogPost.offsetHeight;
 				
 				if ( maxHeight < blogPostHeight ) {
 					maxHeight = blogPostHeight;
@@ -26,12 +25,12 @@ window.UAGBPostCarousel = {
 			} );
 
 			Object.keys( postActive ).forEach( ( key ) => {
-				const selector =  postActive[key].querySelectorAll( '.uagb-post__inner-wrap' );
-				selector[0].style.height = maxHeight + 'px';
+				const selector =  postActive[key].querySelector( '.uagb-post__inner-wrap' );
+				selector.style.height = maxHeight + 'px';
 			} );
 
-			let selector = scope[0].querySelectorAll( '.slick-list' );
-			selector[0].style.height = postActiveHeight + 'px';
+			let selector = scope[0].querySelector( '.slick-list' );
+			selector.style.height = postActiveHeight + 'px';
 			maxHeight = -1;
 			wrapperHeight = -1;
 			Object.keys( postWrapper ).forEach( ( key ) => {	
@@ -40,9 +39,9 @@ window.UAGBPostCarousel = {
 					return true;
 				}
 				
-				selector = $this.querySelectorAll( '.uagb-post__inner-wrap' );
-				const blogPostHeight = selector[0].offsetHeight;
-				selector[0].style.height = blogPostHeight + 'px';
+				selector = $this.querySelector( '.uagb-post__inner-wrap' );
+				const blogPostHeight = selector.offsetHeight;
+				selector.style.height = blogPostHeight + 'px';
 				
 			} );
 		}
@@ -54,8 +53,8 @@ window.UAGBPostCarousel = {
 			postActive = scope[0].querySelectorAll( '.slick-slide.slick-active' );
 
 			Object.keys( postActive ).forEach( ( key ) => {
-				const selector = postActive[key].querySelectorAll( '.uagb-post__inner-wrap' );
-				selector[0].style.height = 'auto';	
+				const selector = postActive[key].querySelector( '.uagb-post__inner-wrap' );
+				selector.style.height = 'auto';	
 			} );
 
 			Object.keys( postActive ).forEach( ( key ) => {
@@ -63,8 +62,8 @@ window.UAGBPostCarousel = {
 				if ( $this.classList.contains( 'slick-active' ) ) {
 					return true;
 				}
-				const  selector = $this.querySelectorAll( '.uagb-post__inner-wrap' );
-				selector[0].style.height = 'auto';	
+				const  selector = $this.querySelector( '.uagb-post__inner-wrap' );
+				selector.style.height = 'auto';	
 			} );
 		}
 	},
