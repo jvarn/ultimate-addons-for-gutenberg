@@ -16,7 +16,7 @@ import InspectorTab, {
 import UAGImage from '@Components/image';
 import SpacingControl from '@Components/spacing-control';
 import MultiButtonsControl from '@Components/multi-buttons-control';
-import getImageSize from '@Controls/ImageSize';
+import { getImageSize } from '@Utils/Helpers';
 
 import {
 	PanelBody,

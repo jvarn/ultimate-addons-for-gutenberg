@@ -7,7 +7,7 @@ import { InspectorControls } from '@wordpress/block-editor';
 import TypographyControl from '@Components/typography';
 import WebfontLoader from '@Components/typography/fontloader';
 import AdvancedPopColorControl from '@Components/color-control/advanced-pop-color-control.js';
-import getImageSize from '@Controls/ImageSize';
+import { getImageSize } from '@Utils/Helpers';
 import {
 	PanelBody,
 	SelectControl,

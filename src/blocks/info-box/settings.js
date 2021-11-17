@@ -21,7 +21,7 @@ import {
 	BlockControls,
 	InspectorControls,
 } from '@wordpress/block-editor';
-import getImageSize from '@Controls/ImageSize';
+import { getImageSize } from '@Utils/Helpers';
 import {
 	PanelBody,
 	SelectControl,

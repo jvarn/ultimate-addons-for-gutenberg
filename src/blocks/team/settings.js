@@ -15,7 +15,7 @@ import SpacingControl from '@Components/spacing-control';
 import MultiButtonsControl from '@Components/multi-buttons-control';
 import UAGImage from '@Components/image';
 import UAGTabsControl from '@Components/tabs';
-import getImageSize from '@Controls/ImageSize';
+import { getImageSize } from '@Utils/Helpers';
 let imageSizeOptions = [
 	{
 		value: 'thumbnail',

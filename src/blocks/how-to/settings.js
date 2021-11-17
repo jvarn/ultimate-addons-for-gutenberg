@@ -16,7 +16,7 @@ import InspectorTab, {
 } from '@Components/inspector-tabs/InspectorTab.js';
 import Range from '@Components/range/Range.js';
 import UAGImage from '@Components/image';
-import getImageSize from '@Controls/ImageSize';
+import { getImageSize } from '@Utils/Helpers';
 
 import {
 	PanelBody,
