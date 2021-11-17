@@ -211,51 +211,39 @@ const attributes = {
 	},
 	leftPadding: {
 		type: 'number',
-		default: 30,
 	},
 	rightPadding: {
 		type: 'number',
-		default: 30,
 	},
 	topPadding: {
 		type: 'number',
-		default: 30,
 	},
 	bottomPadding: {
 		type: 'number',
-		default: 30,
 	},
 	leftPaddingTablet: {
 		type: 'number',
-		default: 30,
 	},
 	rightPaddingTablet: {
 		type: 'number',
-		default: 30,
 	},
 	topPaddingTablet: {
 		type: 'number',
-		default: 30,
 	},
 	bottomPaddingTablet: {
 		type: 'number',
-		default: 30,
 	},
 	leftPaddingMobile: {
 		type: 'number',
-		default: 30,
 	},
 	rightPaddingMobile: {
 		type: 'number',
-		default: 30,
 	},
 	topPaddingMobile: {
 		type: 'number',
-		default: 30,
 	},
 	bottomPaddingMobile: {
 		type: 'number',
-		default: 30,
 	},
 	paddingUnit: {
 		type: 'string',

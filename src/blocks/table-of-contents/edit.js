@@ -95,53 +95,53 @@ const UAGBTableOfContentsEdit = ( props ) => {
 
 		//Padding
 		if ( vPaddingDesktop ) {
-			if ( 'undefined' === topPadding ) {
+			if ( undefined === topPadding ) {
 				setAttributes( { topPadding: vPaddingDesktop } );
 			}
-			if ( 'undefined' === bottomPadding ) {
+			if ( undefined === bottomPadding ) {
 				setAttributes( { bottomPadding: vPaddingDesktop } );
 			}
 		}
 		
 		if ( hPaddingDesktop ) {
-			if ( 'undefined' === rightPadding ) {
+			if ( undefined === rightPadding ) {
 				setAttributes( { rightPadding: hPaddingDesktop } );
 			}
-			if ( 'undefined' === leftPadding ) {
+			if ( undefined === leftPadding ) {
 				setAttributes( { leftPadding: hPaddingDesktop } );
 			}
 		}
 
 		if ( vPaddingMobile ) {
-			if ( 'undefined' === topPaddingMobile ) {
+			if ( undefined === topPaddingMobile ) {
 				setAttributes( { topPaddingMobile: vPaddingMobile } );
 			}
-			if ( 'undefined' === bottomPaddingMobile ) {
+			if ( undefined === bottomPaddingMobile ) {
 				setAttributes( { bottomPaddingMobile: vPaddingMobile } );
 			}
 		}
 		if ( hPaddingMobile ) {
-			if ( 'undefined' === rightPaddingMobile ) {
+			if ( undefined === rightPaddingMobile ) {
 				setAttributes( { rightPaddingMobile: hPaddingMobile } );
 			}
-			if ( 'undefined' === leftPaddingMobile ) {
+			if ( undefined === leftPaddingMobile ) {
 				setAttributes( { leftPaddingMobile: hPaddingMobile } );
 			}
 		}
 
 		if ( vPaddingTablet ) {
-			if ( 'undefined' === topPaddingTablet ) {
+			if ( undefined === topPaddingTablet ) {
 				setAttributes( { topPaddingTablet: vPaddingTablet } );
 			}
-			if ( 'undefined' === bottomPaddingTablet ) {
+			if ( undefined === bottomPaddingTablet ) {
 				setAttributes( { bottomPaddingTablet: vPaddingTablet } );
 			}
 		}
 		if ( hPaddingTablet ) {
-			if ( 'undefined' === rightPaddingTablet ) {
+			if ( undefined === rightPaddingTablet ) {
 				setAttributes( { rightPaddingTablet: hPaddingTablet } );
 			}
-			if ( 'undefined' === leftPaddingTablet ) {
+			if ( undefined === leftPaddingTablet ) {
 				setAttributes( { leftPaddingTablet: hPaddingTablet } );
 			}
 		}
