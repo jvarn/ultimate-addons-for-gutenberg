@@ -58,10 +58,9 @@ UAGBTableOfContents = { // eslint-disable-line no-undef
 		scrollDelay = node.getAttribute( 'data-delay' );
 
 		if ( null !== typeof offset ) {
-			window.scrollTo({
-				top: offset - scrollOffset,
-				behavior: 'smooth',
-			});
+			node.animate([ {
+				scrollTop:  offset - scrollOffset
+			}], scrollDelay )
 		}
 	},
 
@@ -102,10 +101,9 @@ UAGBTableOfContents = { // eslint-disable-line no-undef
 				const offset = document.querySelector(hash).offsetTop;
 
 				if ( null !== typeof offset ) {
-					window.scrollTo({
-						top: offset,
-						behavior: 'smooth',
-					});
+					node.animate([ {
+						scrollTop:  offset - scrollOffset
+					}], scrollDelay )
 				}
 			}
 		}
