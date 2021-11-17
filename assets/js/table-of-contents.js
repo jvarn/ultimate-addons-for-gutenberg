@@ -53,12 +53,12 @@ UAGBTableOfContents = { // eslint-disable-line no-undef
 
 		scrollOffset = node.getAttribute( 'data-offset' );
 
-		const offset = document.querySelector(hash).offsetTop;
+		const offset = document.querySelector( hash ).offsetTop;
 
 		scrollDelay = node.getAttribute( 'data-delay' );
 
-		if ( null !== typeof offset ) {
-			node.animate([ {
+		if ( null !== offset ) {
+			node.animate( [ {
 				scrollTop:  offset - scrollOffset
 			}], scrollDelay )
 		}
@@ -81,10 +81,10 @@ UAGBTableOfContents = { // eslint-disable-line no-undef
 	},
 
 	_scrollTop() {
-		window.scrollTo({
+		window.scrollTo( {
 			top: 0,
 			behavior: 'smooth',
-		});
+		} );
 	},
 
 	_scroll() {
@@ -98,10 +98,10 @@ UAGBTableOfContents = { // eslint-disable-line no-undef
 			scrollDelay = node.getAttribute( 'data-delay' );
 			if ( scrollData ) {
 
-				const offset = document.querySelector(hash).offsetTop;
+				const offset = document.querySelector( hash ).offsetTop;
 
-				if ( null !== typeof offset ) {
-					node.animate([ {
+				if ( null !== offset ) {
+					node.animate( [ {
 						scrollTop:  offset - scrollOffset
 					}], scrollDelay )
 				}
@@ -169,10 +169,10 @@ UAGBTableOfContents = { // eslint-disable-line no-undef
 				let headerText = parseTocSlug( divsArr[i].innerText );
 
 				if ( headerText.length < 1 ) {
-					var aTags = tocListWrap.getElementsByTagName("a");
-					var searchText = divsArr[i].innerText;
-					for (var j = 0; j < aTags.length; j++) {
-						if (aTags[j].textContent == searchText) {
+					const aTags = tocListWrap.getElementsByTagName( 'a' );
+					const searchText = divsArr[i].innerText;
+					for ( let j = 0; j < aTags.length; j++ ) {
+						if ( aTags[j].textContent === searchText ) {
 							headerText = aTags[j].setAttribute( 'href' , ' ' );
 						}
 					}
