@@ -79,7 +79,7 @@ window.UAGBPostMasonry = {
 			
 			window.addEventListener( 'scroll', function() {
 
-				const boundingClientRect = $scope.querySelectorAll( '.uagb-post__items' )[0].lastElementChild.getBoundingClientRect();
+				const boundingClientRect = $scope.querySelector( '.uagb-post__items' ).lastElementChild.getBoundingClientRect();
 
 				const offsetTop = boundingClientRect.top + window.scrollY;
 
@@ -111,8 +111,9 @@ window.UAGBPostMasonry = {
 		
 		if ( 'button' === $attr.paginationEventType ) {
 			
-			if( $scope.querySelectorAll( '.uagb-post-pagination-button' ).length > 0 ){
-				$scope.querySelectorAll( '.uagb-post-pagination-button' )[0].onclick = function () {
+			if( $scope.querySelector( '.uagb-post-pagination-button' ) ){
+				
+				$scope.querySelector( '.uagb-post-pagination-button' ).onclick = function () {
 					
 					$scope = this.closest( '.uagb-post-grid' );
 					const total = $scope.getAttribute( 'data-total' );
@@ -120,13 +121,13 @@ window.UAGBPostMasonry = {
 						total,
 						page_number: count,
 					};
-					$scope.querySelectorAll( '.uagb-post__load-more-wrap' )[0].style.display='none';
+					$scope.querySelector( '.uagb-post__load-more-wrap' ).style.display='none';
 					if ( true === loadStatus ) {
 						if ( count <= total ) {
 							if ( loader.length > 0 ){
 								loader[0].style.display='none';
 							}
-							$scope.querySelectorAll( '.uagb-post__load-more-wrap' )[0].style.display='block';
+							$scope.querySelector( '.uagb-post__load-more-wrap' ).style.display='block';
 							window.UAGBPostMasonry._callAjax(
 								$scope,
 								$args,
@@ -181,11 +182,11 @@ window.UAGBPostMasonry = {
 				}
 			
 				if ( true === append ) {
-					$scope.querySelectorAll( '.uagb-post__load-more-wrap' )[0].style.display='block';
+					$scope.querySelector( '.uagb-post__load-more-wrap' ).style.display='block';
 				}
 				
 				if ( count === parseInt( $obj.total ) ) {
-					$scope.querySelectorAll( '.uagb-post__load-more-wrap' )[0].style.display='none';
+					$scope.querySelector( '.uagb-post__load-more-wrap' ).style.display='none';
 				}
 		  } )
 		  .catch( function( error ) {
