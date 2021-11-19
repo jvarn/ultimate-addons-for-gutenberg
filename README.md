@@ -5,7 +5,7 @@
 **Requires at least:** 4.7  
 **Requires PHP:** 5.6  
 **Tested up to:** 5.8  
-**Stable tag:** 1.25.0  
+**Stable tag:** 2.0.0-beta.1  
 **License:** GPLv2 or later  
 **License URI:** https://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -168,6 +168,13 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 1. /assets/screenshots/1.png
 
 ## Changelog ##
+
+### 2.0.0-beta.1 - THURSDAY, 30TH SEPTEMBER 2021 ###
+* New: Redesigned UI/UX controls of UAG blocks.
+* New: Introduced new, beautiful & fast UAG admin dashboard powered by React.
+* Improvement: Display Condition – an UAG extensions will be enabled for Core Gutenberg blocks & UAG blocks by default, Also added a filter to enable UAG extension for third-party blocks.
+* Improvement: Refactored the UAG blocks' code & improved editor performance drastically.
+* Improvement: Typography control - Added text-transform, text-decoration and font-style options.
 
 ### 1.25.0 – MONDAY, 4TH OCTOBER 2021 ###
 * New: Introduced Wireframe Blocks.

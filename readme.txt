@@ -5,7 +5,7 @@ Tags: gutenberg, blocks, gutenberg blocks, editor, block
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 5.8
-Stable tag: 1.25.0
+Stable tag: 2.0.0-beta.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -169,6 +169,18 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 
 == Changelog ==
 
+= 2.0.0-beta.1 - THURSDAY, 30TH SEPTEMBER 2021 =
+* New: Redesigned UI/UX controls of UAG blocks.
+* New: Introduced new, beautiful & fast UAG admin dashboard powered by React.
+* Improvement: Display Condition – an UAG extensions will be enabled for Core Gutenberg blocks & UAG blocks by default, Also added a filter to enable UAG extension for third-party blocks.
+* Improvement: Refactored the UAG blocks' code & improved editor performance drastically.
+* Improvement: Typography control - Added text-transform, text-decoration and font-style options.
+* Fix: Call to undefined function `twentyseventeen_panel_count()` when previewing another theme from the customizer.
+* Fix: Posts - Excerpt Layout Strips Shortcodes on Frontend.
+* Fix: Marketing Button - Validation issue when Title Tag set to p.
+* Fix: Table of contents - Removed empty li tags from Table of contents markup.
+* Fix: Blockquote - Tweet content not shown in tweet box when double and single quotes are used.
+
 = 1.25.0 – MONDAY, 4TH OCTOBER 2021 =
 * New: Introduced Wireframe Blocks.
 
@@ -257,7 +269,7 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 * Improvement: Advanced Column - Added two more shapes dividers for top and bottom.
 * Improvement: Added filter to disable block conditions from the editor. [Read More](https://ultimategutenberg.com/docs/display-conditions-blocks/)
 * Improvement: Block preview on responsive devices in the editor.
-* Improvement: First letter Capitalize instead of all Meta in post layout. 
+* Improvement: First letter Capitalize instead of all Meta in post layout.
 * Improvement: Forms - Resolved after adding v3 ReCaptcha in forms block needs to click twice on button to submit the form.
 * Improvement: Tabs - Added alignment option to the tab headers.
 * Improvement: Tabs - Added option to update the tabs order by moving it left or right.
@@ -266,7 +278,7 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 * Fix: Block Conditions - Resolved Invalid block issue of core widget blocks.
 * Fix: Content Timeline - Fixed Connector layout on mobile devices issue.
 * Fix: Display Condition - Added body tag instead of "entry-content" class in CSS to hide the block.
-* Fix: Forms - Resolved subject is not attached in the mail issue. 
+* Fix: Forms - Resolved subject is not attached in the mail issue.
 * Fix: Google Map - Added some padding for the editor to improve a Google Map selection experience.
 * Fix: Social Share - Fixed the jQuery undefined error.
 * Fix: Tabs - Nested tab layout breaking all the tab functionality.
@@ -390,7 +402,7 @@ The awesome React FontIconPicker is developed by [Alessandro Benoit](http://code
 * Fix: Info Box - Fixed a Typography issue with CTA-Button.
 * Fix: Call To Action - Rectified the issue with Anchor that does not save.
 
-= 1.16.1 = 
+= 1.16.1 =
 * Improvement: Post Masonry - Added Pagination option.
 * Improvement: Advanced Columns - New Gradient Palette is introduced to set background.
 * Improvement: Sections - New Gradient Palette is introduced to set background.

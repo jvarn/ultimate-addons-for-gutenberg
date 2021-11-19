@@ -137,7 +137,7 @@ final class UAGB_Scripts_Utils {
 		if ( is_rtl() ) {
 			wp_enqueue_style(
 				'uagb-style-rtl', // Handle.
-				UAGB_URL . 'assets/css/style-blocks.rtl.css', // RTL style CSS.
+				UAGB_URL . 'assets/css/style-blocks-rtl.min.css', // RTL style CSS.
 				array(),
 				UAGB_VER
 			);
@@ -166,10 +166,23 @@ final class UAGB_Scripts_Utils {
 		);
 
 		if ( ! empty( $file_name ) ) {
-			$info[ $path ] = $uploads_dir['path'] . $file_name;
-			$info[ $url ]  = $uploads_dir['url'] . $file_name;
+			$info[ $path ] = $uploads_dir['path'] . 'assets/' . $type . '/' . $file_name;
+			$info[ $url ]  = $uploads_dir['url'] . 'assets/' . $type . '/' . $file_name;
 		}
 
 		return $info;
+	}
+
+	/**
+	 * Get JS url from to assets.
+	 *
+	 * @since 2.0.0
+	 *
+	 * @param string $file_name File name.
+	 *
+	 * @return string JS url.
+	 */
+	public static function get_js_url( $file_name ) {
+		return UAGB_URL . 'assets/js/' . $file_name . UAGB_JS_EXT;
 	}
 }
